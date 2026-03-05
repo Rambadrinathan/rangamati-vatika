@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>RangaMati Vatika - Green Biophilic School - Post 3</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1080px; overflow: hidden; font-family: 'Lato', sans-serif; }
+  .canvas {
+    width: 1080px; height: 1080px; position: relative;
+    background: url('https://drive.google.com/thumbnail?id=1Fza9VkBOY4IowynQKxVsIIgFH-VUWnUn&sz=w1200') center/cover no-repeat;
+  }
+  .overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(46,83,57,0.82) 0%,
+      rgba(46,83,57,0.6) 35%,
+      rgba(46,83,57,0.5) 60%,
+      rgba(46,83,57,0.85) 100%
+    );
+  }
+  .content {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    padding: 80px 72px 120px;
+    text-align: center; color: #fff;
+  }
+  .icon-row {
+    display: flex; gap: 24px; margin-bottom: 36px;
+  }
+  .icon-circle {
+    width: 56px; height: 56px;
+    border: 2px solid rgba(197,165,59,0.6);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px;
+  }
+  .eyebrow {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700; font-size: 15px;
+    letter-spacing: 4px; text-transform: uppercase;
+    color: #C5A53B;
+    margin-bottom: 28px;
+  }
+  .headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600; font-size: 58px;
+    line-height: 1.15;
+    margin-bottom: 36px;
+    max-width: 880px;
+  }
+  .divider-dots {
+    display: flex; gap: 12px; margin-bottom: 36px;
+  }
+  .divider-dots span {
+    width: 8px; height: 8px;
+    background: #C5A53B;
+    border-radius: 50%;
+  }
+  .subtext {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300; font-size: 23px;
+    line-height: 1.65;
+    color: #E8F5E9;
+    max-width: 780px;
+    margin-bottom: 52px;
+  }
+  .cta-badge {
+    display: inline-flex; align-items: center; gap: 16px;
+    border: 2px solid #C5A53B;
+    padding: 16px 44px;
+    border-radius: 4px;
+  }
+  .cta-badge .line {
+    width: 24px; height: 2px;
+    background: #C5A53B;
+  }
+  .cta-badge .text {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700; font-size: 17px;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: #C5A53B;
+  }
+  .bottom-bar {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 64px;
+    background: rgba(46,83,57,0.95);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 48px;
+    border-top: 2px solid rgba(197,165,59,0.4);
+  }
+  .bottom-bar span {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px; color: #E8F5E9;
+    letter-spacing: 1px;
+  }
+  .bottom-bar .url {
+    color: #C5A53B; font-weight: 700;
+  }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="icon-row">
+      <div class="icon-circle">&#x1F9D3;</div>
+      <div class="icon-circle">&#x1F9D2;</div>
+      <div class="icon-circle">&#x1F476;</div>
+    </div>
+    <div class="eyebrow">Intergenerational Wisdom</div>
+    <h1 class="headline">Grandparents Next Door. Artists Across the Path.</h1>
+    <div class="divider-dots">
+      <span></span><span></span><span></span>
+    </div>
+    <p class="subtext">Children learn resilience from elders and creativity from artists. An intergenerational community designed for how humans actually thrive.</p>
+    <div class="cta-badge">
+      <span class="line"></span>
+      <span class="text">Green Biophilic School | RangaMati Vatika</span>
+      <span class="line"></span>
+    </div>
+  </div>
+  <div class="bottom-bar">
+    <span>RangaMati Vatika | Green Biophilic School</span>
+    <span class="url">rangamati-vatika.vercel.app</span>
+  </div>
+</div>
+</body>
+</html>

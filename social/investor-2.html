@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>RangaMati Vatika — 30 Years of Execution</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+    position: relative;
+  }
+  .bg {
+    position: absolute;
+    inset: 0;
+    background: url('https://drive.google.com/thumbnail?id=1uXjTWXGIeNdtU4fHvy3LBOgBL1KYkfU1&sz=w1200') center/cover no-repeat;
+  }
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+  }
+  .content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 72px;
+    text-align: center;
+  }
+
+  .accent-line {
+    width: 64px;
+    height: 3px;
+    background: #C5A53B;
+    margin-bottom: 40px;
+  }
+
+  .headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 58px;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+  }
+
+  .headline-accent {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 42px;
+    color: #C5A53B;
+    margin-bottom: 44px;
+  }
+
+  .subtext {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.7;
+    max-width: 740px;
+    opacity: 0.9;
+    margin-bottom: 52px;
+  }
+
+  /* Proof points */
+  .proof-row {
+    display: flex;
+    gap: 0;
+    margin-bottom: 52px;
+    width: 100%;
+    max-width: 860px;
+  }
+  .proof {
+    flex: 1;
+    padding: 24px 12px;
+    border-left: 1px solid rgba(197,165,59,0.35);
+  }
+  .proof:first-child {
+    border-left: none;
+  }
+  .proof-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 36px;
+    color: #C5A53B;
+    margin-bottom: 6px;
+  }
+  .proof-label {
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    opacity: 0.75;
+  }
+
+  /* CTA */
+  .cta {
+    display: inline-block;
+    border: 1.5px solid #C5A53B;
+    padding: 16px 48px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #C5A53B;
+    background: rgba(197,165,59,0.08);
+  }
+
+  /* Bottom bar */
+  .bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 48px;
+    background: rgba(0,0,0,0.45);
+    border-top: 1px solid rgba(197,165,59,0.25);
+  }
+  .bottom-bar .brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.75);
+  }
+  .bottom-bar .url {
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: rgba(197,165,59,0.7);
+  }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="accent-line"></div>
+    <h1 class="headline">This Isn't a Startup.</h1>
+    <div class="headline-accent">It's a Culmination.</div>
+    <p class="subtext">Backed by KarmYog Foundation &mdash; 30 years building communities, training 50,000+ artisans, permanent studio at IIT Kharagpur Research Park.</p>
+    <div class="proof-row">
+      <div class="proof">
+        <div class="proof-value">30</div>
+        <div class="proof-label">Years</div>
+      </div>
+      <div class="proof">
+        <div class="proof-value">50K+</div>
+        <div class="proof-label">Artisans Trained</div>
+      </div>
+      <div class="proof">
+        <div class="proof-value">IIT KGP</div>
+        <div class="proof-label">Research Park</div>
+      </div>
+      <div class="proof">
+        <div class="proof-value">Done</div>
+        <div class="proof-label">Bhoomi Puja</div>
+      </div>
+    </div>
+    <div class="cta">Due Diligence Ready</div>
+  </div>
+  <div class="bottom-bar">
+    <div class="brand">RangaMati Vatika &nbsp;|&nbsp; KarmYog for 21st Century</div>
+    <div class="url">rangamati-vatika.vercel.app</div>
+  </div>
+</body>
+</html>
