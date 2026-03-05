@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RangaMati Vatika — Channel Partner Prospectus</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rose: #8B2252;
+    --rose-medium: #A83269;
+    --rose-light: #C74E82;
+    --blush: #FFF0F3;
+    --blush-deep: #FFE0E8;
+    --charcoal: #2D2D2D;
+    --charcoal-light: #4A4A4A;
+    --gold: #B8860B;
+    --gold-light: #DAA520;
+    --white: #FFFFFF;
+    --off-white: #FAFAFA;
+    --border-light: #F0D0DA;
+    --text-muted: #6B6B6B;
+  }
+
+  @page { size: landscape; margin: 20mm 15mm; }
+
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page-break { page-break-before: always; }
+    .no-break { page-break-inside: avoid; }
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Lato', 'Segoe UI', sans-serif;
+    color: var(--charcoal);
+    background: var(--white);
+    font-size: 10.5pt;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── COVER PAGE ── */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(170deg, var(--white) 0%, var(--blush) 40%, var(--blush-deep) 100%);
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--rose), var(--gold), var(--rose));
+  }
+
+  .cover-brand {
+    letter-spacing: 12px;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 700;
+    font-size: 42pt;
+    color: var(--rose);
+    margin-bottom: 4px;
+  }
+
+  .cover-brand-bengali {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 18pt;
+    color: var(--rose-medium);
+    letter-spacing: 6px;
+    margin-bottom: 40px;
+    font-weight: 400;
+  }
+
+  .cover-divider {
+    width: 120px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--rose), transparent);
+    margin: 0 auto 40px;
+  }
+
+  .cover-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 22pt;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+
+  .cover-subtitle {
+    font-size: 11pt;
+    font-weight: 300;
+    color: var(--charcoal-light);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    max-width: 500px;
+  }
+
+  .cover-meta {
+    font-size: 9pt;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .cover-meta span {
+    display: inline-block;
+    margin: 0 12px;
+  }
+
+  .confidential-badge {
+    display: inline-block;
+    border: 1px solid var(--rose);
+    color: var(--rose);
+    font-size: 8pt;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    margin-top: 30px;
+    font-weight: 700;
+  }
+
+  /* ── PAGE CONTAINER ── */
+  .page { max-height: 100vh; overflow: hidden; 
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 48px 52px;
+  }
+
+  /* ── HEADER BAR ── */
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--rose);
+    padding-bottom: 10px;
+    margin-bottom: 36px;
+  }
+
+  .page-header-brand {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 13pt;
+    font-weight: 700;
+    color: var(--rose);
+    letter-spacing: 4px;
+  }
+
+  .page-header-doc {
+    font-size: 8pt;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ── SECTION HEADINGS ── */
+  .section-number {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 11pt;
+    font-weight: 600;
+    color: var(--rose);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 6px;
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 20pt;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 20px;
+    line-height: 1.25;
+  }
+
+  h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 14pt;
+    font-weight: 600;
+    color: var(--rose);
+    margin-bottom: 12px;
+    margin-top: 24px;
+  }
+
+  p {
+    margin-bottom: 14px;
+    color: var(--charcoal-light);
+  }
+
+  /* ── HIGHLIGHT BOX ── */
+  .highlight-box {
+    background: linear-gradient(135deg, var(--blush) 0%, var(--white) 100%);
+    border-left: 4px solid var(--rose);
+    padding: 20px 24px;
+    margin: 24px 0;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .highlight-box p {
+    margin-bottom: 6px;
+    color: var(--charcoal);
+  }
+
+  .highlight-box strong {
+    color: var(--rose);
+  }
+
+  /* ── KEY METRICS ROW ── */
+  .metrics-row {
+    display: flex;
+    gap: 16px;
+    margin: 28px 0;
+  }
+
+  .metric-card {
+    flex: 1;
+    background: var(--blush);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 20px 16px;
+    text-align: center;
+  }
+
+  .metric-value {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 22pt;
+    font-weight: 700;
+    color: var(--rose);
+    line-height: 1.1;
+  }
+
+  .metric-label {
+    font-size: 8.5pt;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    margin-top: 6px;
+  }
+
+  /* ── TABLES ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 10pt;
+  }
+
+  thead th {
+    background: var(--rose);
+    color: var(--white);
+    font-weight: 700;
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 9pt;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  thead th:first-child { border-radius: 6px 0 0 0; }
+  thead th:last-child { border-radius: 0 6px 0 0; }
+
+  tbody td {
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--charcoal);
+  }
+
+  tbody tr:nth-child(even) {
+    background: var(--blush);
+  }
+
+  tbody tr:hover {
+    background: var(--blush-deep);
+  }
+
+  .td-highlight {
+    font-weight: 700;
+    color: var(--rose);
+    font-size: 11pt;
+  }
+
+  /* ── COMMISSION CALLOUT ── */
+  .commission-callout {
+    background: var(--rose);
+    color: var(--white);
+    padding: 18px 24px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 16px 0;
+  }
+
+  .commission-callout .amount {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 26pt;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .commission-callout .label {
+    font-size: 9pt;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+
+  /* ── FEATURE LIST ── */
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+  }
+
+  .feature-list li {
+    position: relative;
+    padding: 10px 0 10px 28px;
+    border-bottom: 1px solid #f0e8ec;
+    color: var(--charcoal-light);
+  }
+
+  .feature-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 16px;
+    width: 10px;
+    height: 10px;
+    background: var(--rose);
+    border-radius: 50%;
+    opacity: 0.7;
+  }
+
+  .feature-list li strong {
+    color: var(--charcoal);
+  }
+
+  /* ── TWO COLUMNS ── */
+  .two-col {
+    display: flex;
+    gap: 32px;
+    margin: 20px 0;
+  }
+
+  .two-col > div { flex: 1; }
+
+  /* ── EXIT PATH BOX ── */
+  .exit-box {
+    background: var(--white);
+    border: 2px solid var(--border-light);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 12px 0;
+  }
+
+  .exit-box-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 13pt;
+    font-weight: 700;
+    color: var(--rose);
+    margin-bottom: 10px;
+  }
+
+  .exit-flow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+
+  .exit-step {
+    background: var(--blush);
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: var(--charcoal);
+  }
+
+  .exit-arrow {
+    color: var(--rose);
+    font-size: 16pt;
+    font-weight: 700;
+  }
+
+  /* ── TEAM SECTION ── */
+  .team-row {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin: 28px 0;
+  }
+
+  .team-member {
+    text-align: center;
+    flex: 0 0 160px;
+  }
+
+  .team-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--rose);
+    margin-bottom: 10px;
+  }
+
+  .team-name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 12pt;
+    font-weight: 700;
+    color: var(--charcoal);
+  }
+
+  .team-role {
+    font-size: 8.5pt;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* ── FOOTER ── */
+  .page-footer {
+    margin-top: 48px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    justify-content: space-between;
+    font-size: 8pt;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+  }
+
+  /* ── DIVIDER ── */
+  .section-divider {
+    width: 60px;
+    height: 2px;
+    background: var(--rose);
+    margin: 32px 0;
+    opacity: 0.4;
+  }
+
+  /* ── ALLOCATION BAR ── */
+  .alloc-bar-container {
+    margin: 20px 0;
+  }
+
+  .alloc-bar {
+    display: flex;
+    height: 36px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+
+  .alloc-segment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8pt;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.5px;
+  }
+
+  .alloc-legend {
+    display: flex;
+    gap: 20px;
+    font-size: 9pt;
+  }
+
+  .alloc-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .alloc-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════
+     COVER PAGE
+     ════════════════════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-brand">RANGAMATI VATIKA</div>
+  <div class="cover-brand-bengali">রাঙামাটি বাটিকা</div>
+  <div class="cover-divider"></div>
+  <div class="cover-title">Channel Partner Prospectus</div>
+  <div class="cover-subtitle">An Exclusive Opportunity for Select Marketing &amp; Channel Partners</div>
+
+  <div class="team-row">
+    <div class="team-member">
+      <img class="team-photo" src="https://drive.google.com/thumbnail?id=1CeUkFpPuio0eokVhkSIKjgeTuLHKDqAR&sz=w300" alt="Mahacharya">
+      <div class="team-name">Mahacharya</div>
+      <div class="team-role">Founder &amp; Visionary</div>
+    </div>
+    <div class="team-member">
+      <img class="team-photo" src="https://drive.google.com/thumbnail?id=1X-prTBMGyduoe2z-tGH4xm95lt9OBg1-&sz=w300" alt="Ram">
+      <div class="team-name">Ram</div>
+      <div class="team-role">Managing Director</div>
+    </div>
+    <div class="team-member">
+      <img class="team-photo" src="https://drive.google.com/thumbnail?id=1m6Ng7pl7wvDZADcmfXx1VKcp3ef2VsQ2&sz=w300" alt="Reena">
+      <div class="team-name">Reena</div>
+      <div class="team-role">Director of Operations</div>
+    </div>
+  </div>
+
+  <div class="cover-meta">
+    <span>Uluberia, West Bengal</span> | <span>Confidential</span> | <span>March 2026</span>
+  </div>
+  <div class="confidential-badge">Confidential &mdash; For Intended Recipients Only</div>
+</div>
+
+<!-- ════════════════════════════════════════════════════
+     SECTION 1: THE OPPORTUNITY
+     ════════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="page-header">
+    <div class="page-header-brand">RANGAMATI VATIKA</div>
+    <div class="page-header-doc">Channel Partner Prospectus</div>
+  </div>
+
+  <div class="section-number">Section 01</div>
+  <h2>The Opportunity</h2>
+
+  <p>RangaMati Vatika represents a first-of-its-kind development on the banks of the River Ganga at Uluberia, West Bengal &mdash; a low-rise, biophilic senior living community anchored by spiritual and community infrastructure. The project sits at the convergence of growing demand for dignified senior housing, rising interest in land-backed investments, and a market conspicuously devoid of high-quality alternatives in this segment.</p>
+
+  <div class="metrics-row">
+    <div class="metric-card">
+      <div class="metric-value">~70,000</div>
+      <div class="metric-label">Sq. Ft. Land Area</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-value">50</div>
+      <div class="metric-label">Planned Units</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-value">48</div>
+      <div class="metric-label">Units for Lease / Investment</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-value">5</div>
+      <div class="metric-label">Low-Rise Blocks</div>
+    </div>
+  </div>
+
+  <p>The development comprises five low-rise residential blocks, a central temple, landscaped community commons, and standalone cottages &mdash; designed to foster an environment of active, purposeful ageing within a spiritually grounded setting.</p>
+
+  <div class="highlight-box">
+    <p><strong>Location Advantage:</strong> Directly situated on the River Ganga at Uluberia, providing both natural serenity and established connectivity to the Kolkata metropolitan area.</p>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ════════════════════════════════════════════════════
+       SECTION 2: WHAT MAKES THIS DIFFERENT
+       ════════════════════════════════════════════════════ -->
+  <div class="section-number">Section 02</div>
+  <h2>Structural Differentiation</h2>
+
+  <p>Unlike conventional real estate syndications or fractional ownership schemes, RangaMati Vatika offers a fundamentally different proposition. Each element of the investment is tangible, documented, and tied to specific physical assets.</p>
+
+  <ul class="feature-list">
+    <li><strong>Land-Backed 99-Year Lease</strong> &mdash; Every partnership interest is underpinned by defined land rights with a 99-year lease tenure, providing long-term security and clarity of ownership.</li>
+    <li><strong>Unit-Linked Upside</strong> &mdash; Returns are tied directly to specific units and their lease premiums, not abstract profit-sharing ratios. Partners can identify precisely which assets generate their returns.</li>
+    <li><strong>Defined Exit Pathways</strong> &mdash; Clear, documented exit routes within 18&ndash;30 months, structured around unit lease-outs rather than speculative resale.</li>
+    <li><strong>Infrastructure Anchor</strong> &mdash; The central temple, landscaped commons, and community infrastructure create enduring value and differentiate the project from purely commercial developments.</li>
+  </ul>
+
+  <div class="page-footer">
+    <div>KarmYog for 21st Century Foundation</div>
+    <div>Confidential &mdash; Page 1</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════
+     SECTION 3: COMMISSION STRUCTURE
+     ════════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="page-header">
+    <div class="page-header-brand">RANGAMATI VATIKA</div>
+    <div class="page-header-doc">Channel Partner Prospectus</div>
+  </div>
+
+  <div class="section-number">Section 03</div>
+  <h2>Partner Commission Structure</h2>
+
+  <p>RangaMati Vatika offers a two-phase entry model for investors, with corresponding commission structures calibrated to reward early and mid-stage partner engagement. Commission rates are among the highest in the segment, reflecting the premium nature of the underlying asset.</p>
+
+  <div class="two-col">
+    <div>
+      <h3>Phase 1 &mdash; Early Partner Entry</h3>
+      <table>
+        <tbody>
+          <tr><td>Land Allocation</td><td>25% (~14,000 sq. ft.)</td></tr>
+          <tr><td>Investor Ticket Size</td><td class="td-highlight">&#8377;1 Crore</td></tr>
+          <tr><td>Investor Receives</td><td>25% Land + 25% Project Equity + 12 Units</td></tr>
+        </tbody>
+      </table>
+      <div class="commission-callout">
+        <span class="amount">&#8377;10 Lakhs</span>
+        <span class="label">Broker Commission Per Closure</span>
+      </div>
+    </div>
+    <div>
+      <h3>Phase 2 &mdash; Mid-Stage Entry</h3>
+      <table>
+        <tbody>
+          <tr><td>Land Allocation</td><td>Additional 25%</td></tr>
+          <tr><td>Investor Ticket Size</td><td class="td-highlight">&#8377;1.5 Crores (~&#8377;5L/katha)</td></tr>
+          <tr><td>Investor Receives</td><td>25% Land + 12 Units</td></tr>
+        </tbody>
+      </table>
+      <div class="commission-callout">
+        <span class="amount">&#8377;20 Lakhs</span>
+        <span class="label">Broker Commission Per Closure</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ════════════════════════════════════════════════════
+       SECTION 4: UNIT ECONOMICS
+       ════════════════════════════════════════════════════ -->
+  <div class="section-number">Section 04</div>
+  <h2>Unit Economics</h2>
+
+  <p>The per-unit economics demonstrate clear surplus generation, providing both the investor and the channel partner with transparent visibility into value creation at the most granular level.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Value</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Lease Premium per Unit</td>
+        <td class="td-highlight">&#8377;50 Lakhs</td>
+        <td>Market-benchmarked 99-year lease</td>
+      </tr>
+      <tr>
+        <td>Development Cost per Unit</td>
+        <td>&#8377;30 Lakhs</td>
+        <td>All-in including infrastructure</td>
+      </tr>
+      <tr>
+        <td>Net Surplus per Unit</td>
+        <td class="td-highlight">&#8377;20 Lakhs</td>
+        <td>Before overheads &amp; reserves</td>
+      </tr>
+      <tr>
+        <td><strong>Total Upside per Partner</strong></td>
+        <td class="td-highlight"><strong>&#8377;2.4 Crores</strong></td>
+        <td>12 units &times; &#8377;20L net surplus</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="highlight-box">
+    <p><strong>Key Insight:</strong> Each investor partner's 12-unit allocation generates a potential &#8377;2.4 Crore surplus, creating a compelling narrative for broker-led conversations with HNI and family office clients.</p>
+  </div>
+
+  <div class="page-footer">
+    <div>KarmYog for 21st Century Foundation</div>
+    <div>Confidential &mdash; Page 2</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════
+     SECTION 5: EXIT OPTIONS
+     ════════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="page-header">
+    <div class="page-header-brand">RANGAMATI VATIKA</div>
+    <div class="page-header-doc">Channel Partner Prospectus</div>
+  </div>
+
+  <div class="section-number">Section 05</div>
+  <h2>Flexible Exit Pathways</h2>
+
+  <p>Both phases are structured with built-in exit flexibility, allowing investors to recover their principal through partial lease-outs while retaining residual units for long-term upside. This de-risks the proposition and significantly eases the broker's sales conversation.</p>
+
+  <div class="exit-box no-break">
+    <div class="exit-box-title">Phase 1 Exit &mdash; &#8377;1 Crore Invested</div>
+    <div class="exit-flow">
+      <div class="exit-step">Invest &#8377;1 Cr</div>
+      <div class="exit-arrow">&rarr;</div>
+      <div class="exit-step">Lease 6 Units</div>
+      <div class="exit-arrow">&rarr;</div>
+      <div class="exit-step">Realise &#8377;1.2 Cr</div>
+      <div class="exit-arrow">&rarr;</div>
+      <div class="exit-step">Retain 6 Units Free</div>
+    </div>
+    <p style="margin-top: 12px; font-size: 9.5pt; color: var(--text-muted);">Capital recovered in full with 20% surplus. Remaining 6 units represent pure upside with zero cost basis.</p>
+  </div>
+
+  <div class="exit-box no-break">
+    <div class="exit-box-title">Phase 2 Exit &mdash; &#8377;1.5 Crores Invested</div>
+    <div class="exit-flow">
+      <div class="exit-step">Invest &#8377;1.5 Cr</div>
+      <div class="exit-arrow">&rarr;</div>
+      <div class="exit-step">Lease 7 Units</div>
+      <div class="exit-arrow">&rarr;</div>
+      <div class="exit-step">Realise &#8377;1.4 Cr</div>
+      <div class="exit-arrow">&rarr;</div>
+      <div class="exit-step">Retain 5 Units Free</div>
+    </div>
+    <p style="margin-top: 12px; font-size: 9.5pt; color: var(--text-muted);">Near-complete capital recovery. Retained 5 units at zero cost basis provide ongoing value participation.</p>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ════════════════════════════════════════════════════
+       SECTION 6: UNIT ALLOCATION
+       ════════════════════════════════════════════════════ -->
+  <div class="section-number">Section 06</div>
+  <h2>Unit Allocation Framework</h2>
+
+  <p>The 50-unit development is allocated across three distinct categories, each serving a defined market segment. Channel partners should note that the <strong>Senior Living</strong> category represents the primary broker-addressable inventory.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Units</th>
+        <th>Channel Relevance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Senior Living</strong></td>
+        <td class="td-highlight">24&ndash;30 Units</td>
+        <td>Primary lease category &mdash; core broker focus</td>
+      </tr>
+      <tr>
+        <td>Gurukul / Baal Vidhyashram</td>
+        <td>10&ndash;12 Units</td>
+        <td>Internal allocation (educational infrastructure)</td>
+      </tr>
+      <tr>
+        <td>Guest &amp; Retreat</td>
+        <td>8 Units + 8 Cottages</td>
+        <td>Hospitality &amp; retreat segment</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alloc-bar-container no-break">
+    <div class="alloc-bar">
+      <div class="alloc-segment" style="flex: 55; background: var(--rose);">Senior Living</div>
+      <div class="alloc-segment" style="flex: 22; background: var(--rose-medium);">Gurukul</div>
+      <div class="alloc-segment" style="flex: 23; background: var(--gold);">Guest & Retreat</div>
+    </div>
+    <div class="alloc-legend">
+      <div class="alloc-legend-item"><span class="alloc-dot" style="background: var(--rose);"></span> Senior Living (24-30)</div>
+      <div class="alloc-legend-item"><span class="alloc-dot" style="background: var(--rose-medium);"></span> Gurukul (10-12)</div>
+      <div class="alloc-legend-item"><span class="alloc-dot" style="background: var(--gold);"></span> Guest & Retreat (16)</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div>KarmYog for 21st Century Foundation</div>
+    <div>Confidential &mdash; Page 3</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════
+     SECTION 7 & 8: WHY PARTNER + TERMS
+     ════════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="page-header">
+    <div class="page-header-brand">RANGAMATI VATIKA</div>
+    <div class="page-header-doc">Channel Partner Prospectus</div>
+  </div>
+
+  <div class="section-number">Section 07</div>
+  <h2>The Case for Partnership</h2>
+
+  <p>RangaMati Vatika is designed to be a broker-friendly proposition. The combination of high absolute commissions, transparent unit-level pricing, and multiple buyer profiles creates a fertile environment for consistent deal flow.</p>
+
+  <div class="two-col">
+    <div>
+      <h3>Financial Incentives</h3>
+      <ul class="feature-list">
+        <li><strong>Industry-Leading Commissions</strong> &mdash; &#8377;10&ndash;20 Lakhs per closure, significantly above market norms for comparable ticket sizes.</li>
+        <li><strong>Transparent Unit Pricing</strong> &mdash; Every number is auditable. No opaque cost structures or hidden deductions.</li>
+        <li><strong>Milestone-Linked Payouts</strong> &mdash; Commission disbursement tied to clearly defined project milestones, ensuring predictability.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Market Advantages</h3>
+      <ul class="feature-list">
+        <li><strong>Multiple Buyer Profiles</strong> &mdash; Addresses senior living, spiritual community, and investment buyer segments simultaneously.</li>
+        <li><strong>Clean Documentation</strong> &mdash; All legal, title, and transaction documentation maintained to institutional standards.</li>
+        <li><strong>Cultural Depth + Financial Discipline</strong> &mdash; A rare combination that resonates with discerning HNI and family office clients.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <div class="section-number">Section 08</div>
+  <h2>Engagement Terms</h2>
+
+  <p>The partnership framework is designed for clarity and fairness, ensuring alignment of interests between RangaMati Vatika and its channel partners from the outset.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Term</th>
+        <th>Detail</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Partner Role</td>
+        <td>Introducer and deal facilitator &mdash; no capital commitment required</td>
+      </tr>
+      <tr>
+        <td>Exclusivity</td>
+        <td>Non-exclusive by default; exclusive arrangements available upon mutual agreement</td>
+      </tr>
+      <tr>
+        <td>Commercial Terms</td>
+        <td>Fully documented upfront prior to any engagement activity</td>
+      </tr>
+      <tr>
+        <td>Payment Structure</td>
+        <td>Disbursements against defined, verifiable project milestones</td>
+      </tr>
+      <tr>
+        <td>Transparency</td>
+        <td>Partners receive full visibility into unit allocation, pricing, and deal status</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="highlight-box" style="margin-top: 28px;">
+    <p style="text-align: center; margin-bottom: 0; font-size: 11pt;"><strong>To initiate a partnership conversation, contact the RangaMati Vatika team directly.</strong></p>
+    <p style="text-align: center; margin-bottom: 0; font-size: 10pt; color: var(--text-muted);">All discussions are held in strict confidence. Terms are finalised on a case-by-case basis.</p>
+  </div>
+
+  <div class="page-footer" style="margin-top: 60px;">
+    <div>KarmYog for 21st Century Foundation</div>
+    <div>Confidential &mdash; Page 4</div>
+  </div>
+</div>
+
+</body>
+</html>

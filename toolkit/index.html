@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RangaMati Vatika &#8212; Investor Outreach Toolkit</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>&#127807;</text></svg>">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700;900&display=swap');
+
+  :root {
+    --rose: #8B2252;
+    --rose-light: #C4547A;
+    --blush: #FFF0F3;
+    --blush-deep: #FFE0E6;
+    --pink-border: #F5C6D0;
+    --cream: #FFFAF5;
+    --warm-white: #FEFCFB;
+    --charcoal: #2D2D2D;
+    --dark: #1A1A1A;
+    --slate: #555555;
+    --gold: #B8860B;
+    --gold-light: #FFF8E7;
+    --forest: #2D5A3D;
+    --success: #228B22;
+    --sidebar-w: 260px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    color: var(--charcoal);
+    background: var(--cream);
+    line-height: 1.7;
+    font-size: 18px;
+  }
+
+  /* LAYOUT */
+  .layout { display: flex; min-height: 100vh; }
+
+  /* SIDEBAR */
+  .sidebar {
+    width: var(--sidebar-w);
+    position: fixed;
+    top: 0; left: 0;
+    height: 100vh;
+    background: linear-gradient(180deg, #FFFAF5 0%, var(--blush) 100%);
+    color: var(--charcoal);
+    overflow-y: auto;
+    z-index: 100;
+    padding: 24px 0;
+    transition: transform 0.3s;
+    border-right: 1px solid var(--pink-border);
+  }
+  .sidebar-brand {
+    padding: 0 20px 20px;
+    border-bottom: 1px solid var(--pink-border);
+    margin-bottom: 16px;
+  }
+  .sidebar-brand h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--rose);
+  }
+  .sidebar-brand .sub {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--slate);
+    font-weight: 700;
+  }
+  .sidebar nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--slate);
+    text-decoration: none;
+    padding: 9px 20px;
+    font-size: 13px;
+    transition: all 0.2s;
+    border-left: 3px solid transparent;
+  }
+  .sidebar nav a:hover,
+  .sidebar nav a.active {
+    color: var(--rose);
+    background: rgba(139,34,82,0.06);
+    border-left-color: var(--rose);
+  }
+  .sidebar nav a .num {
+    font-size: 11px;
+    font-weight: 900;
+    color: var(--rose);
+    min-width: 22px;
+  }
+  .sidebar nav .divider {
+    height: 1px;
+    background: var(--pink-border);
+    margin: 10px 20px;
+  }
+
+  .main { margin-left: var(--sidebar-w); flex: 1; }
+
+  .mobile-toggle {
+    display: none;
+    position: fixed;
+    top: 16px; left: 16px;
+    z-index: 200;
+    background: var(--rose);
+    color: white;
+    border: none;
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 520px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://drive.google.com/thumbnail?id=1b8gVq_t3S1r7X0S5AyN9QkzvQSzH6idw&sz=w1600');
+    background-size: cover;
+    background-position: center 40%;
+    filter: brightness(0.55);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 60px 48px;
+    color: white;
+    max-width: 800px;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 58px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+  }
+  .hero .subtitle {
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 16px;
+    opacity: 0.95;
+  }
+  .hero p { font-size: 17px; opacity: 0.9; line-height: 1.7; }
+  .hero .badges {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .hero .badge {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 8px 16px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+  .hero .badge.gold { border-color: var(--gold); color: #FFD700; }
+  .hero .meta { margin-top: 16px; font-size: 13px; opacity: 0.5; letter-spacing: 1px; text-transform: uppercase; }
+
+  /* SECTION RENDER BREAK */
+  .render-break {
+    height: 300px;
+    margin: 0 32px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+  }
+  .render-break img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .render-break .rb-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 16px 24px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.6));
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  /* SECTIONS */
+  section {
+    background: white;
+    border: 1px solid var(--pink-border);
+    border-radius: 14px;
+    padding: 44px 48px;
+    margin: 28px 32px;
+  }
+  section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    color: var(--rose);
+    margin-bottom: 8px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--blush);
+  }
+  section h2 .num { color: var(--rose-light); font-weight: 400; margin-right: 8px; }
+  section h3 { font-size: 22px; color: var(--charcoal); margin: 32px 0 14px; font-weight: 700; }
+  section h4 { font-size: 17px; color: var(--rose); margin: 22px 0 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+  p { margin: 12px 0; }
+
+  /* TABLES */
+  table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 17px; }
+  th { background: var(--rose); color: white; padding: 12px 16px; text-align: left; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
+  td { padding: 12px 16px; border-bottom: 1px solid var(--blush-deep); vertical-align: top; }
+  tr:hover td { background: var(--blush); }
+
+  /* RESOURCE CARDS */
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 18px;
+    margin: 24px 0;
+  }
+  .resource-card {
+    border: 1px solid var(--pink-border);
+    border-radius: 12px;
+    padding: 24px;
+    background: var(--warm-white);
+    transition: all 0.2s;
+  }
+  .resource-card:hover {
+    box-shadow: 0 6px 20px rgba(139,34,82,0.08);
+    transform: translateY(-2px);
+  }
+  .resource-card .rc-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 14px;
+  }
+  .resource-card .rc-icon.pdf { background: #FFE0E6; }
+  .resource-card .rc-icon.sheet { background: #E8F5E9; }
+  .resource-card .rc-icon.doc { background: #E3F2FD; }
+  .resource-card .rc-icon.image { background: #FFF0F3; }
+  .resource-card .rc-icon.web { background: #FFF3E0; }
+  .resource-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--charcoal);
+    margin: 0 0 8px;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .resource-card .rc-desc { font-size: 15px; color: var(--slate); margin-bottom: 16px; }
+  .resource-card .rc-format {
+    display: inline-block;
+    font-size: 11px; font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    background: var(--blush);
+    color: var(--rose);
+    margin-right: 6px;
+  }
+  .rc-status { display: inline-block; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; padding: 3px 10px; border-radius: 4px; }
+  .rc-status.ready { background: #E8F5E9; color: var(--success); }
+  .resource-card .rc-actions { display: flex; gap: 8px; margin-top: 16px; }
+  .rc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+  }
+  .rc-btn.primary { background: var(--rose); color: white; }
+  .rc-btn.primary:hover { background: var(--rose-light); }
+  .rc-btn.secondary { background: white; color: var(--rose); border: 1px solid var(--pink-border); }
+  .rc-btn.secondary:hover { border-color: var(--rose); }
+
+  /* CARD GRID */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0; }
+  .card { border: 1px solid var(--pink-border); border-radius: 12px; padding: 28px; background: var(--warm-white); }
+  .card:hover { box-shadow: 0 4px 16px rgba(139,34,82,0.06); }
+  .card .label { font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; color: var(--rose); margin-bottom: 8px; }
+  .card h4 { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--charcoal); margin: 0 0 12px; text-transform: none; letter-spacing: 0; }
+  .card ul { padding-left: 20px; margin: 10px 0; }
+  .card li { margin: 5px 0; font-size: 17px; }
+
+  /* FLOW */
+  .flow { display: flex; gap: 0; margin: 24px 0; overflow-x: auto; }
+  .flow-step { flex: 1; min-width: 180px; padding: 22px 16px; background: white; border: 1px solid var(--pink-border); position: relative; text-align: center; }
+  .flow-step:first-child { border-radius: 12px 0 0 12px; }
+  .flow-step:last-child { border-radius: 0 12px 12px 0; }
+  .flow-step .step-num { background: var(--rose); color: white; width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+  .flow-step h5 { font-size: 14px; font-weight: 900; text-transform: uppercase; color: var(--rose); margin-bottom: 8px; }
+  .flow-step p { font-size: 14px; color: var(--slate); margin: 0; }
+  .flow-step::after { content: '\25B6'; position: absolute; right: -10px; top: 50%; transform: translateY(-50%); color: var(--rose-light); font-size: 14px; z-index: 1; }
+  .flow-step:last-child::after { display: none; }
+
+  /* SPRINT */
+  .sprint { border-left: 3px solid var(--rose); margin: 20px 0 20px 16px; padding-left: 28px; }
+  .sprint-week { position: relative; margin-bottom: 30px; }
+  .sprint-week::before { content: ''; position: absolute; left: -35px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: var(--rose); border: 3px solid white; box-shadow: 0 0 0 2px var(--rose); }
+  .sprint-week h4 { margin: 0 0 10px; color: var(--charcoal); }
+  .sprint-week ul { padding-left: 20px; }
+  .sprint-week li { margin: 6px 0; font-size: 17px; }
+
+  /* COPY BLOCKS */
+  .copy-wrapper { position: relative; margin: 18px 0; }
+  .copy-block {
+    background: var(--blush);
+    color: var(--charcoal);
+    border: 1px solid var(--pink-border);
+    border-radius: 12px;
+    padding: 28px 32px;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    overflow: hidden;
+  }
+  .copy-block.whatsapp { background: #E7FFDB; border-color: #B2DFAB; }
+  .copy-block.email { background: #F5F0FF; border-color: #D4C5F9; }
+  .copy-block .highlight { color: var(--rose); font-weight: 700; }
+  .copy-block .placeholder { color: var(--rose-light); font-style: italic; }
+  .copy-btn {
+    position: absolute;
+    top: 8px; right: 8px;
+    background: var(--rose);
+    color: white;
+    border: none;
+    padding: 7px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.2s;
+    z-index: 2;
+  }
+  .copy-btn:hover { background: var(--rose-light); }
+  .copy-btn.copied { background: var(--success); }
+
+  /* CREATIVE CARDS */
+  .creative-card { border: 2px solid var(--pink-border); border-radius: 14px; margin: 24px 0; overflow: hidden; }
+  .creative-card .creative-header { background: linear-gradient(90deg, var(--rose), var(--rose-light)); color: white; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
+  .creative-card .creative-header h4 { color: white; margin: 0; font-size: 18px; text-transform: none; letter-spacing: 0; }
+  .creative-card .creative-header .platform { background: rgba(255,255,255,0.2); padding: 5px 14px; border-radius: 12px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+  .creative-card .creative-body { padding: 28px; background: white; }
+  .creative-card .usage-note { background: var(--gold-light); border-left: 3px solid var(--gold); padding: 12px 18px; font-size: 15px; color: #8B6914; margin-top: 18px; border-radius: 0 8px 8px 0; }
+
+  /* OBJECTIONS */
+  .objection-row { display: grid; grid-template-columns: 1fr 2fr; gap: 0; border: 1px solid var(--pink-border); border-radius: 10px; margin: 14px 0; overflow: hidden; }
+  .objection-q { background: var(--blush); padding: 18px 22px; font-weight: 700; color: var(--rose); font-size: 17px; border-right: 2px solid var(--rose-light); }
+  .objection-a { padding: 18px 22px; font-size: 17px; }
+
+  /* MEETING FLOW */
+  .meeting-flow { display: grid; grid-template-columns: 90px 170px 1fr; gap: 0; margin: 18px 0; }
+  .meeting-flow > div { padding: 12px 16px; border-bottom: 1px solid var(--blush-deep); font-size: 17px; }
+  .meeting-flow .time { font-weight: 900; color: var(--rose); font-size: 15px; }
+  .meeting-flow .phase { font-weight: 700; color: var(--charcoal); }
+
+  /* CHECKLIST */
+  .checklist { list-style: none; padding: 0; }
+  .checklist li { padding: 10px 0 10px 36px; position: relative; font-size: 17px; border-bottom: 1px solid var(--blush); }
+  .checklist li::before { content: '\2713'; position: absolute; left: 0; color: var(--success); font-weight: 900; font-size: 18px; }
+  .checklist li.pending::before { content: '\25CB'; color: var(--slate); }
+
+  /* HIGHLIGHT BOXES */
+  .highlight-box { border-radius: 12px; padding: 22px 26px; margin: 18px 0; font-size: 17px; }
+  .highlight-box.warning { background: #FFF5F5; border-left: 4px solid var(--rose); }
+  .highlight-box.success { background: #F0FAF0; border-left: 4px solid var(--success); }
+  .highlight-box.info { background: var(--blush); border-left: 4px solid var(--rose-light); }
+  .highlight-box.gold { background: var(--gold-light); border-left: 4px solid var(--gold); }
+  .highlight-box strong { display: block; margin-bottom: 6px; }
+
+  /* METRICS */
+  .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; margin: 22px 0; }
+  .metric { text-align: center; padding: 22px; border-radius: 12px; background: var(--blush); border: 1px solid var(--pink-border); }
+  .metric .value { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 700; color: var(--rose); }
+  .metric .mlabel { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--slate); margin-top: 4px; }
+
+  blockquote { border-left: 3px solid var(--rose-light); padding: 14px 22px; margin: 18px 0; font-style: italic; color: var(--slate); background: var(--blush); border-radius: 0 10px 10px 0; font-size: 18px; }
+
+  /* GALLERY */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+    margin: 22px 0;
+  }
+  .gallery-item {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--pink-border);
+    cursor: pointer;
+    transition: transform 0.2s;
+    aspect-ratio: 16/10;
+    position: relative;
+  }
+  .gallery-item:hover { transform: scale(1.02); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; border: none; }
+  .gallery-item .gallery-label {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 8px 12px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.65));
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  /* TEAM GRID */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 24px;
+    margin: 22px 0;
+  }
+  .team-card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--pink-border);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+  }
+  .team-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(139,34,82,0.12); }
+  .team-card img { width: 100%; aspect-ratio: 1; object-fit: cover; border: none; }
+  .team-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--charcoal); padding: 14px 16px 2px; }
+  .team-role { font-size: 14px; color: var(--slate); padding: 0 16px 18px; }
+
+  /* LIGHTBOX */
+  .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 1000; align-items: center; justify-content: center; cursor: pointer; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 90vw; max-height: 90vh; border-radius: 10px; }
+  .lightbox-close { position: absolute; top: 20px; right: 30px; color: white; font-size: 36px; cursor: pointer; background: none; border: none; }
+  .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); color: white; font-size: 40px; cursor: pointer; background: rgba(255,255,255,0.1); border: none; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .lightbox-nav.prev { left: 20px; }
+  .lightbox-nav.next { right: 20px; }
+
+  .toast { position: fixed; bottom: 24px; right: 24px; background: var(--rose); color: white; padding: 14px 26px; border-radius: 10px; font-size: 16px; font-weight: 700; z-index: 500; transform: translateY(100px); opacity: 0; transition: all 0.3s; box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+  .toast.show { transform: translateY(0); opacity: 1; }
+
+  footer { text-align: center; padding: 44px; color: var(--slate); font-size: 15px; margin: 0 32px; }
+  footer .brand { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--rose); margin-bottom: 6px; }
+
+  @media (max-width: 900px) {
+    .sidebar { transform: translateX(-100%); }
+    .sidebar.open { transform: translateX(0); }
+    .mobile-toggle { display: flex; align-items: center; justify-content: center; }
+    .main { margin-left: 0; }
+    section { margin: 14px 10px; padding: 24px 18px; }
+    .hero { min-height: 400px; }
+    .hero h1 { font-size: 36px; }
+    .hero-content { padding: 40px 20px; }
+    .card-grid, .resource-grid { grid-template-columns: 1fr; }
+    .flow { flex-direction: column; }
+    .flow-step::after { display: none; }
+    .flow-step { border-radius: 10px !important; margin-bottom: 8px; }
+    .objection-row { grid-template-columns: 1fr; }
+    .objection-q { border-right: none; border-bottom: 2px solid var(--rose-light); }
+    .meeting-flow { grid-template-columns: 1fr; }
+    .render-break { margin: 0 10px; height: 200px; }
+    .gallery { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+  }
+
+  @media print {
+    .sidebar, .mobile-toggle, .copy-btn, .rc-actions { display: none !important; }
+    .main { margin-left: 0; }
+    section { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<button class="mobile-toggle" onclick="toggleSidebar()" aria-label="Menu">&#9776;</button>
+
+<div class="layout">
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <h2>RangaMati Vatika</h2>
+    <div class="sub">Outreach Toolkit</div>
+  </div>
+  <nav>
+    <a href="#exec"><span class="num">01</span> Executive Summary</a>
+    <a href="#resources"><span class="num">02</span> Resource Hub</a>
+    <a href="#profiles"><span class="num">03</span> Investor Profiles</a>
+    <a href="#sequencing"><span class="num">04</span> Sequencing Guide</a>
+    <a href="#channels"><span class="num">05</span> Outreach Channels</a>
+    <a href="#sprint"><span class="num">06</span> 30-Day Sprint Plan</a>
+    <div class="divider"></div>
+    <a href="#messaging"><span class="num">07</span> Messaging Framework</a>
+    <a href="#objections"><span class="num">08</span> Objection Playbook</a>
+    <a href="#meeting"><span class="num">09</span> Meeting Playbook</a>
+    <a href="#sitevisit"><span class="num">10</span> Site Visit Protocol</a>
+    <div class="divider"></div>
+    <a href="#renders"><span class="num">11</span> Design Renders</a>
+    <a href="#management"><span class="num">12</span> Leadership Team</a>
+    <a href="#bhoomi"><span class="num">13</span> Bhoomi Puja</a>
+    <a href="#market"><span class="num">14</span> Market Landscape</a>
+    <a href="#tracking"><span class="num">15</span> Follow-Up Protocol</a>
+    <a href="#creatives"><span class="num">16</span> Creative Templates</a>
+    <a href="#success"><span class="num">17</span> Success Metrics</a>
+  </nav>
+</aside>
+
+<main class="main">
+
+<!-- HERO WITH RENDER BACKGROUND -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <h1>RangaMati Vatika</h1>
+    <div class="subtitle">Investor Outreach Toolkit</div>
+    <p>Raising &#8377;2.5 Crores from two HNI investors for a 75-unit intergenerational biophilic community on the Ganga at Uluberia, West Bengal. Every resource linked. Every message copy-ready.</p>
+    <div class="badges">
+      <span class="badge gold">&#8377;1Cr + &#8377;1.5Cr Raise</span>
+      <span class="badge">2.0x Projected Returns</span>
+      <span class="badge">97 Kathas Ganga Frontage</span>
+      <span class="badge">99-Year Lease Model</span>
+    </div>
+    <div class="meta">Live Toolkit &nbsp;|&nbsp; March 2026 &nbsp;|&nbsp; Confidential</div>
+  </div>
+</div>
+
+<!-- 01 EXEC -->
+<section id="exec">
+  <h2><span class="num">01</span> Executive Summary</h2>
+  <p>RangaMati Vatika seeks <strong>&#8377;2.5 Crores</strong> from two HNI investors for Phase 1 and Phase 2 (Showcase Pod + Temple + expansion). Units on <strong>99-year long-term lease</strong>.</p>
+  <table>
+    <tr><th>Investor</th><th>Amount</th><th>Returns</th><th>Multiple</th><th>Urgency</th></tr>
+    <tr><td><strong>Investor 1</strong></td><td>&#8377;1 Crore</td><td>&#8377;2 Crores</td><td>2.0x</td><td style="color:#CC0000;font-weight:700;">Immediate</td></tr>
+    <tr><td><strong>Investor 2</strong></td><td>&#8377;1.5 Crores</td><td>&#8377;2 Crores</td><td>1.33x</td><td>Phase 2</td></tr>
+  </table>
+  <div class="highlight-box warning">
+    <strong>Branding Note</strong>
+    RangaMati Vatika is positioned <strong>standalone</strong>. Do not frame it as part of "KarmYog Vatika Gardens" during investor outreach.
+  </div>
+</section>
+
+<!-- VISUAL BREAK: MASTERPLAN -->
+<div class="render-break">
+  <img src="https://drive.google.com/thumbnail?id=1Fza9VkBOY4IowynQKxVsIIgFH-VUWnUn&sz=w1600" alt="Masterplan Aerial View" loading="lazy">
+  <div class="rb-caption">Masterplan &#8212; Aerial View of Full Complex on the Ganga</div>
+</div>
+
+<!-- 02 RESOURCES -->
+<section id="resources">
+  <h2><span class="num">02</span> Resource Hub</h2>
+  <p>Investor-ready materials. Click to view or download.</p>
+
+  <h3>Investor Materials</h3>
+  <div class="resource-grid">
+    <div class="resource-card">
+      <div class="rc-icon pdf">&#128202;</div>
+      <h4>Investor Pitch Deck</h4>
+      <p class="rc-desc">13-slide presentation. Project vision, financials, team, investment structure, and returns.</p>
+      <span class="rc-format">HTML + PDF</span>
+      <span class="rc-status ready">Ready</span>
+      <div class="rc-actions">
+        <a class="rc-btn primary" href="/investor-deck/" target="_blank">&#127760; View Online</a>
+        <a class="rc-btn secondary" href="https://drive.google.com/file/d/1AaJFDhFxGtimVbobxnO6pcdnnfeHE8Ig/view" target="_blank">&#128196; PDF</a>
+      </div>
+    </div>
+
+    <div class="resource-card">
+      <div class="rc-icon sheet">&#128200;</div>
+      <h4>5-Year Financial Model</h4>
+      <p class="rc-desc">Revenue projections, cost structure, IRR analysis. Investor-grade Excel with full formulas.</p>
+      <span class="rc-format">XLSX</span>
+      <span class="rc-status ready">Ready</span>
+      <div class="rc-actions">
+        <a class="rc-btn primary" href="https://drive.google.com/file/d/1U_qgNmOGxHydcXW_RBumgoUMyLITqfF1/view" target="_blank">&#128200; Open Model</a>
+      </div>
+    </div>
+
+    <div class="resource-card">
+      <div class="rc-icon sheet">&#128203;</div>
+      <h4>RangaMati Project Execution Plan</h4>
+      <p class="rc-desc">Phased construction plan with materials, sourcing, cost allocation, and delivery timeline.</p>
+      <span class="rc-format">XLSX</span>
+      <span class="rc-status ready">Ready</span>
+      <div class="rc-actions">
+        <a class="rc-btn primary" href="https://drive.google.com/file/d/126NXdH4ek4q_9eDRINDlNbpK8HCPGi1S/view" target="_blank">&#128200; Open Plan</a>
+      </div>
+    </div>
+  </div>
+
+  <h3>Sales &amp; Channel Materials</h3>
+  <div class="resource-grid">
+    <div class="resource-card">
+      <div class="rc-icon doc">&#129309;</div>
+      <h4>Channel Partner Prospectus</h4>
+      <p class="rc-desc">Commission structure, partnership terms, and unit economics for marketing partners and brokers.</p>
+      <span class="rc-format">HTML + PDF</span>
+      <span class="rc-status ready">Ready</span>
+      <div class="rc-actions">
+        <a class="rc-btn primary" href="/partner-prospectus/" target="_blank">&#127760; View Online</a>
+        <a class="rc-btn secondary" href="https://drive.google.com/file/d/1sOg2DJSA8DudkkBclRi4b8_ouBkaaAIr/view" target="_blank">&#128196; PDF</a>
+      </div>
+    </div>
+
+    <div class="resource-card">
+      <div class="rc-icon pdf">&#127968;</div>
+      <h4>Resident Lifestyle Brochure</h4>
+      <p class="rc-desc">Living on the Ganga &#8212; visual project narrative for prospective residents and lessees.</p>
+      <span class="rc-format">HTML + PDF</span>
+      <span class="rc-status ready">Ready</span>
+      <div class="rc-actions">
+        <a class="rc-btn primary" href="/brochure/" target="_blank">&#127760; View Online</a>
+        <a class="rc-btn secondary" href="https://drive.google.com/file/d/1XjKTWinK1ITvht6yOcIxZv0GKi5tU1E8/view" target="_blank">&#128196; PDF</a>
+      </div>
+    </div>
+
+    <div class="resource-card">
+      <div class="rc-icon web">&#127760;</div>
+      <h4>RangaMati Vatika Website</h4>
+      <p class="rc-desc">Project website with renders, vision, and community details. Share with prospects.</p>
+      <span class="rc-format">WEB</span>
+      <span class="rc-status ready">Ready</span>
+      <div class="rc-actions">
+        <a class="rc-btn primary" id="websiteLink" href="/website/" target="_blank">&#127760; Visit Website</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 PROFILES -->
+<section id="profiles">
+  <h2><span class="num">03</span> Target Investor Profiles</h2>
+  <div class="card-grid">
+    <div class="card">
+      <div class="label">Primary Target</div>
+      <h4>Profile A: The Purpose-Driven HNI</h4>
+      <p><strong>Who:</strong> Professionals/entrepreneurs aged 45-65, &#8377;5-50 Cr net worth</p>
+      <p><strong>Where:</strong> IIT/IIM alumni networks, Rotary/Lions, spiritual communities, Kolkata business circles</p>
+      <p><strong>Hook:</strong> <em>"2.0x returns + generational impact on the Ganga"</em></p>
+    </div>
+    <div class="card">
+      <div class="label">Secondary Target</div>
+      <h4>Profile B: The Real Estate HNI</h4>
+      <p><strong>Who:</strong> Property investors, builders, land aggregators, &#8377;10-100 Cr net worth</p>
+      <p><strong>Where:</strong> Real estate expos, broker networks, CA/wealth manager referrals</p>
+      <p><strong>Hook:</strong> <em>"25% of 97 Kathas of Ganga frontage at pre-development prices"</em></p>
+    </div>
+    <div class="card">
+      <div class="label">Tertiary Target</div>
+      <h4>Profile C: The NRI Returnee</h4>
+      <p><strong>Who:</strong> NRIs with Bengal roots, $500K-$5M, planning return/retirement</p>
+      <p><strong>Where:</strong> NRI forums, Bengal diaspora, IIT KGP alumni abroad</p>
+      <p><strong>Hook:</strong> <em>"Own a piece of the Ganga &#8212; your roots, your returns, your legacy"</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- VISUAL BREAK: TEMPLE -->
+<div class="render-break">
+  <img src="https://drive.google.com/thumbnail?id=1uXjTWXGIeNdtU4fHvy3LBOgBL1KYkfU1&sz=w1600" alt="Temple Pavilion Aerial" loading="lazy">
+  <div class="rb-caption">Temple Pavilion &#8212; Aerial View with Ganga Frontage</div>
+</div>
+
+<!-- 04 SEQUENCING -->
+<section id="sequencing">
+  <h2><span class="num">04</span> Material Sequencing</h2>
+  <div class="flow">
+    <div class="flow-step"><div class="step-num">1</div><h5>Warm-Up</h5><p>WhatsApp teaser + 1 hero render. Goal: 15-min call.</p></div>
+    <div class="flow-step"><div class="step-num">2</div><h5>First Talk</h5><p>Send Investor Deck PDF + optional AI podcast. Spark interest.</p></div>
+    <div class="flow-step"><div class="step-num">3</div><h5>Deep Dive</h5><p>Financial Model + Investor Proposition Deck in person. Build conviction.</p></div>
+    <div class="flow-step"><div class="step-num">4</div><h5>Site Visit</h5><p>Uluberia Ganga frontage + IIT KGP studio. Emotional commitment.</p></div>
+    <div class="flow-step"><div class="step-num">5</div><h5>Close</h5><p>Term sheet. Max 2 gentle nudges over 2 weeks.</p></div>
+  </div>
+</section>
+
+<!-- 05 CHANNELS -->
+<section id="channels">
+  <h2><span class="num">05</span> Outreach Channels</h2>
+  <h3>Tier 1: Warm Network</h3>
+  <table>
+    <tr><th>Channel</th><th>Action</th><th>Owner</th></tr>
+    <tr><td><strong>MahAcharya's network</strong></td><td>Direct calls/WhatsApp to 10-15 HNIs</td><td>MahAcharya</td></tr>
+    <tr><td><strong>IIT KGP alumni</strong></td><td>Targeted outreach to successful alumni</td><td>Ram</td></tr>
+    <tr><td><strong>KarmYog supporters</strong></td><td>People in the KarmYog orbit</td><td>Reena Ji</td></tr>
+    <tr><td><strong>Existing customers</strong></td><td>Lessees from other projects</td><td>Kanchan</td></tr>
+  </table>
+  <h3>Tier 2: Referral Network</h3>
+  <table>
+    <tr><th>Channel</th><th>Action</th><th>Owner</th></tr>
+    <tr><td><strong>CA/Wealth Managers</strong></td><td>Brief 3-4 CAs; offer 1-2% referral fee</td><td>Ram</td></tr>
+    <tr><td><strong>Real estate brokers</strong></td><td>Channel Partner Prospectus to 5-10 brokers</td><td>Kanchan</td></tr>
+    <tr><td><strong>Rotary/Lions/Chamber</strong></td><td>5-min pitch at 1-2 club meetings</td><td>MahAcharya</td></tr>
+  </table>
+  <h3>Tier 3: Digital</h3>
+  <table>
+    <tr><th>Channel</th><th>Action</th><th>Owner</th></tr>
+    <tr><td><strong>LinkedIn</strong></td><td>3-part series: Vision &#8594; Track Record &#8594; Opportunity</td><td>Ram</td></tr>
+    <tr><td><strong>WhatsApp broadcast</strong></td><td>50-100 contacts, 1/week for 4 weeks</td><td>Team</td></tr>
+    <tr><td><strong>NRI forums</strong></td><td>Kolkata NRI Facebook groups</td><td>Ram</td></tr>
+  </table>
+</section>
+
+<!-- 06 SPRINT -->
+<section id="sprint">
+  <h2><span class="num">06</span> 30-Day Sprint Plan</h2>
+  <div class="sprint">
+    <div class="sprint-week"><h4>Week 1 &#8212; Activate Warm Network</h4><ul><li>MahAcharya: List 15 HNIs, call 5</li><li>Ram: List 10 IIT KGP alumni, send teaser</li><li>Reena Ji: List 10 KarmYog supporters, send teaser</li><li>Generate NotebookLM podcast from investor deck</li></ul></div>
+    <div class="sprint-week"><h4>Week 2 &#8212; Broker + Referral Activation</h4><ul><li>Send Channel Partner Prospectus to 5 brokers</li><li>Brief 3 CAs/wealth managers</li><li>Schedule 2-3 in-person meetings</li><li>Ram: First LinkedIn post (Vision)</li></ul></div>
+    <div class="sprint-week"><h4>Week 3 &#8212; Meetings + Site Visits</h4><ul><li>Investor Proposition Deck presentations (target: 3-5)</li><li>First site visit to Uluberia</li><li>IIT KGP Research Park visit</li><li>Ram: Second LinkedIn post (Track Record)</li></ul></div>
+    <div class="sprint-week"><h4>Week 4 &#8212; Close</h4><ul><li>Follow up all serious prospects (max 2 touchpoints)</li><li>Address due diligence requests</li><li>Prepare term sheets</li><li>Ram: Third LinkedIn post (Opportunity)</li></ul></div>
+  </div>
+</section>
+
+<!-- VISUAL BREAK: RESIDENTIAL -->
+<div class="render-break">
+  <img src="https://drive.google.com/thumbnail?id=1z7hS4skz4dt7fuGdeJ9FFMnJHqfxta70&sz=w1600" alt="Residential Living Walls" loading="lazy">
+  <div class="rb-caption">Residential Pods &#8212; Living Walls, Garden Streams, Biophilic Design</div>
+</div>
+
+<!-- 07 MESSAGING -->
+<section id="messaging">
+  <h2><span class="num">07</span> Messaging Framework</h2>
+
+  <h3>The One-Liner</h3>
+  <div class="copy-wrapper">
+    <button class="copy-btn" onclick="copyBlock(this)">&#128203; Copy</button>
+    <blockquote>"&#8377;1 Crore for 25% of a Ganga-frontage community with 2.0x projected returns in 18-24 months &#8212; backed by a team with 30 years of proven execution. Units on 99-year lease."</blockquote>
+  </div>
+
+  <h3>WhatsApp Teaser</h3>
+  <div class="copy-wrapper">
+    <button class="copy-btn" onclick="copyBlock(this)">&#128203; Copy</button>
+    <div class="copy-block whatsapp">&#x1F64F; [Name] ji,
+
+Sharing a rare investment opportunity &#8212; RangaMati Vatika, a 75-unit biophilic community on direct Ganga frontage at Uluberia, West Bengal.
+
+Key facts:
+&#x2022; 97 Kathas of Ganga-front land (acquired &amp; registered)
+&#x2022; &#8377;1Cr investment &#8594; 25% land + equity &#8594; 2.0x returns
+&#x2022; Units on 99-year long-term lease
+&#x2022; Bhoomi Puja done, construction-ready
+&#x2022; Led by KarmYog Foundation (30 years, IIT KGP base)
+
+Would love 15 minutes to walk you through this.
+
+Regards,
+[Name]
+KarmYog for 21st Century Foundation</div>
+  </div>
+
+  <h3>Email Template</h3>
+  <div class="copy-wrapper">
+    <button class="copy-btn" onclick="copyBlock(this)">&#128203; Copy</button>
+    <div class="copy-block email"><span class="highlight">Subject: Investment Opportunity &#8212; Ganga-Frontage Community | 2.0x Returns</span>
+
+Dear [Name],
+
+I'm reaching out with a selective investment opportunity in RangaMati Vatika &#8212; a 75-unit intergenerational biophilic community on the banks of the Ganga at Uluberia, West Bengal.
+
+THE OPPORTUNITY:
+&#x2022; 97 Kathas of direct Ganga frontage (acquired, registered, Bhoomi Puja done)
+&#x2022; &#8377;1 Crore investment &#8594; 25% land ownership + 25% company equity
+&#x2022; Projected returns: &#8377;2 Crores (2.0x) in 18-24 months
+&#x2022; Units on 99-year long-term lease model
+
+THE TEAM:
+MahAcharya Sourabh J. Sarkar (IIT KGP, Syracuse Univ, 30 years) leads KarmYog Foundation, headquartered at IIT Kharagpur Research Park.
+
+Happy to schedule a 20-minute call at your convenience.
+
+Warm regards,
+[Name]
+KarmYog for 21st Century Foundation
+401 IIT Kharagpur Research Park, Newtown Kolkata 700135</div>
+  </div>
+</section>
+
+<!-- 08 OBJECTIONS -->
+<section id="objections">
+  <h2><span class="num">08</span> Objection Handling Playbook</h2>
+  <div class="objection-row"><div class="objection-q">"What if leases don't sell?"</div><div class="objection-a">Your investment is backed by <strong>land</strong>. Ganga frontage only appreciates. Worst case: you own 24 Kathas of riverfront land.</div></div>
+  <div class="objection-row"><div class="objection-q">"Why not use a bank loan?"</div><div class="objection-a">Banks fund post-approval construction. We need <strong>pre-construction capital</strong> for the Showcase Pod, which drives pre-leasing.</div></div>
+  <div class="objection-row"><div class="objection-q">"No real estate track record."</div><div class="objection-a"><strong>30 years of building biophilic structures.</strong> 10+ completed projects including 15,000 sq.ft. Durga Puja pavilion. We build in-house.</div></div>
+  <div class="objection-row"><div class="objection-q">"18-24 months seems fast."</div><div class="objection-a">Phase 1 (Showcase Pod) is 6 months. Pre-leasing starts immediately after. We've delivered similar-scale projects before.</div></div>
+  <div class="objection-row"><div class="objection-q">"I want guaranteed returns."</div><div class="objection-a">No honest promoter guarantees returns. But your downside is protected: <strong>you own 25% of appreciating Ganga frontage</strong>.</div></div>
+  <div class="objection-row"><div class="objection-q">"Who else has invested?"</div><div class="objection-a">KarmYog has <strong>&#8377;70 Lakhs of our own money</strong> in. We eat our own cooking.</div></div>
+  <div class="objection-row"><div class="objection-q">"Bengal is not a hot market."</div><div class="objection-a"><strong>Exactly.</strong> That's why 97 Kathas of Ganga frontage costs &#8377;70L, not &#8377;7 Crores. You're investing before the market catches up.</div></div>
+  <div class="objection-row"><div class="objection-q">"What legal structure?"</div><div class="objection-a"><strong>25% equity + 25% land registered in your name.</strong> Units on 99-year lease. Full legal documentation available.</div></div>
+</section>
+
+<!-- 09 MEETING -->
+<section id="meeting">
+  <h2><span class="num">09</span> The 45-Minute Meeting</h2>
+  <h3>Pre-Meeting Checklist</h3>
+  <ul class="checklist">
+    <li>Confirm details, share teaser if not already sent</li>
+    <li>Prepare printed Investor Proposition Deck (14 slides, colour)</li>
+    <li>Bring: iPad with renders, Bhoomi Puja photos, Durga Puja video</li>
+    <li>Bring: Land documents summary (1 page)</li>
+  </ul>
+  <h3>Meeting Flow</h3>
+  <div class="meeting-flow">
+    <div class="time">0-2 min</div><div class="phase">Opening</div><div>"Thank you for your time. Let me share something I think will excite you."</div>
+    <div class="time">2-5 min</div><div class="phase">The Opportunity</div><div>&#8377;1Cr &#8594; 25% &#8594; 2.0x &#8594; 18-24 months. 99-year lease. <strong>Let it land.</strong></div>
+    <div class="time">5-12 min</div><div class="phase">The Team</div><div>30-year journey, IIT KGP, Durga Puja, credentials.</div>
+    <div class="time">12-18 min</div><div class="phase">Why Now</div><div>Ganga frontage scarcity, land acquired, Bhoomi Puja done.</div>
+    <div class="time">18-25 min</div><div class="phase">The Project</div><div>Walk through renders on screen. Use images heavily.</div>
+    <div class="time">25-32 min</div><div class="phase">Financials</div><div>Revenue model, cost structure, margin. Let numbers breathe.</div>
+    <div class="time">32-38 min</div><div class="phase">Risk Mitigation</div><div>6 de-risking factors. Anticipate concerns.</div>
+    <div class="time">38-42 min</div><div class="phase">Q&amp;A</div><div>Listen more than talk. Use objection playbook.</div>
+    <div class="time">42-45 min</div><div class="phase">Next Steps</div><div>"Would you like to visit the site?"</div>
+  </div>
+</section>
+
+<!-- 10 SITE VISIT -->
+<section id="sitevisit">
+  <h2><span class="num">10</span> Site Visit Protocol</h2>
+  <div class="card-grid">
+    <div class="card">
+      <div class="label">Logistics</div>
+      <h4>Getting There</h4>
+      <ul>
+        <li><strong>Location:</strong> Uluberia, WB (~45 km from Howrah)</li>
+        <li><strong>Best time:</strong> Morning 8-10 AM</li>
+        <li><strong>Duration:</strong> 2-3 hours on site</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="label">Visit Flow</div>
+      <h4>On-Site Sequence</h4>
+      <ul>
+        <li><strong>Land walk</strong> (30 min) &#8212; walk 97 Kathas, Ganga bank</li>
+        <li><strong>Vision sharing</strong> (15 min) &#8212; describe each zone</li>
+        <li><strong>Design renders</strong> (15 min) &#8212; iPad at vantage points</li>
+        <li><strong>Bhoomi Puja area</strong> (10 min) &#8212; ceremony location</li>
+        <li><strong>Closing</strong> (15 min) &#8212; tea, gauge interest</li>
+      </ul>
+    </div>
+  </div>
+  <div class="highlight-box gold"><strong>The Ganga Moment</strong>Stand at the riverbank. Let silence do the work. Then: <em>"This is what investors will own 25% of."</em></div>
+  <div class="highlight-box gold"><strong>The Scarcity Moment</strong><em>"This stretch of Ganga frontage &#8212; no new land is being created here. Ever."</em></div>
+</section>
+
+<!-- VISUAL BREAK: RIVERFRONT -->
+<div class="render-break">
+  <img src="https://drive.google.com/thumbnail?id=1D0sQO29r7QaSI4PcqK3u_YPcEhXikpbP&sz=w1600" alt="River View Full Complex" loading="lazy">
+  <div class="rb-caption">River View &#8212; Full Complex with Cottages on the Ganga</div>
+</div>
+
+<!-- 11 RENDERS -->
+<section id="renders">
+  <h2><span class="num">11</span> Design Renders Gallery</h2>
+  <p>22 architectural renders. Click any image to enlarge.</p>
+  <div class="gallery" id="renderGallery"></div>
+  <div class="highlight-box info" style="margin-top:18px;">
+    <strong>Best renders for each stage:</strong>
+    <ul style="margin-top:8px; padding-left:20px;">
+      <li><strong>WhatsApp teaser:</strong> #17 Panoramic river view</li>
+      <li><strong>LinkedIn Vision post:</strong> #05 Masterplan aerial</li>
+      <li><strong>Investor meeting:</strong> Full set on iPad</li>
+      <li><strong>Site visit:</strong> #05 aerial at the actual location</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 12 MANAGEMENT TEAM -->
+<section id="management">
+  <h2><span class="num">12</span> Leadership Team</h2>
+  <p>The leadership behind RangaMati Vatika. Click any photo to enlarge.</p>
+  <div class="team-grid">
+    <div class="team-card" onclick="openMediaLightbox('mgmt', 0)">
+      <img src="https://drive.google.com/thumbnail?id=1CeUkFpPuio0eokVhkSIKjgeTuLHKDqAR&sz=w400" alt="Mahacharya Sourabh J Sarkar" loading="lazy">
+      <div class="team-name">Mahacharya Sourabh J Sarkar</div>
+      <div class="team-role">Spiritual Advisor & Visionary</div>
+    </div>
+    <div class="team-card" onclick="openMediaLightbox('mgmt', 1)">
+      <img src="https://drive.google.com/thumbnail?id=1X-prTBMGyduoe2z-tGH4xm95lt9OBg1-&sz=w400" alt="Ram Badrinathan" loading="lazy">
+      <div class="team-name">Ram Badrinathan</div>
+      <div class="team-role">Promoter & Managing Trustee, KarmYog Foundation</div>
+    </div>
+    <div class="team-card" onclick="openMediaLightbox('mgmt', 2)">
+      <img src="https://drive.google.com/thumbnail?id=1m6Ng7pl7wvDZADcmfXx1VKcp3ef2VsQ2&sz=w400" alt="Reena J Sarkar" loading="lazy">
+      <div class="team-name">Reena J Sarkar</div>
+      <div class="team-role">Co-Founder & Director</div>
+    </div>
+  </div>
+</section>
+
+<!-- VISUAL BREAK -->
+<div class="render-break">
+  <img src="https://drive.google.com/thumbnail?id=1JhKX48s6Oqtc1NjWF50uwcJxVBwtI5kP&sz=w1600" alt="Temple Pavilion — Ganges View" loading="lazy">
+  <div class="rb-caption">Temple Pavilion &#8212; Spiritual Heart of RangaMati Vatika</div>
+</div>
+
+<!-- 13 BHOOMI PUJA -->
+<section id="bhoomi">
+  <h2><span class="num">13</span> Bhoomi Puja Gallery</h2>
+  <p>Ground-breaking ceremony held on the banks of the Ganga. <strong>14 photos</strong> &#8212; click any to enlarge.</p>
+  <div class="gallery" id="bhoomiGallery"></div>
+</section>
+
+<!-- VISUAL BREAK -->
+<div class="render-break">
+  <img src="https://drive.google.com/thumbnail?id=1xZU0NajQ48qXr-wYpBgKpaThCKk-nilA&sz=w1600" alt="Aerial Temple & Shiva Area" loading="lazy">
+  <div class="rb-caption">Aerial View &#8212; Temple, Cottages & Shiva Meditation Area</div>
+</div>
+
+<!-- 14 MARKET -->
+<section id="market">
+  <h2><span class="num">14</span> Market Landscape</h2>
+  <div class="metrics">
+    <div class="metric"><div class="value">$3.55B</div><div class="mlabel">Market 2025</div></div>
+    <div class="metric"><div class="value">$14.14B</div><div class="mlabel">Projected 2031</div></div>
+    <div class="metric"><div class="value">25.9%</div><div class="mlabel">CAGR</div></div>
+    <div class="metric"><div class="value">~1%</div><div class="mlabel">Penetration</div></div>
+    <div class="metric"><div class="value">22K</div><div class="mlabel">Organized Units</div></div>
+    <div class="metric"><div class="value">1.7M</div><div class="mlabel">Demand</div></div>
+  </div>
+  <h3>Competitive Positioning</h3>
+  <table>
+    <tr><th>Feature</th><th>RangaMati Vatika</th><th>Typical Senior Living</th></tr>
+    <tr><td>Location</td><td><strong>Direct Ganga frontage</strong></td><td>Suburban/peri-urban</td></tr>
+    <tr><td>Design</td><td><strong>Biophilic (living walls, bamboo)</strong></td><td>Conventional concrete</td></tr>
+    <tr><td>Community</td><td><strong>Intergenerational (3 age groups)</strong></td><td>Seniors only</td></tr>
+    <tr><td>Price</td><td><strong>&#8377;40L/unit (99-year lease)</strong></td><td>&#8377;60L&#8211;&#8377;2Cr/unit</td></tr>
+    <tr><td>Construction</td><td><strong>In-house, &#8377;2,000/sq.ft.</strong></td><td>&#8377;3,000&#8211;5,000/sq.ft.</td></tr>
+  </table>
+</section>
+
+<!-- 15 TRACKING -->
+<section id="tracking">
+  <h2><span class="num">15</span> Follow-Up Protocol</h2>
+  <div class="highlight-box success">
+    <strong>The 3-Touch Rule</strong>
+    <ol style="margin-top:10px; padding-left:20px;">
+      <li><strong>Day 1:</strong> Thank-you message + add value (new render or market data)</li>
+      <li><strong>Day 7:</strong> Check-in + share something new (podcast, article, progress photo)</li>
+      <li><strong>Day 14:</strong> Final gentle nudge. If no response, move to quarterly updates.</li>
+    </ol>
+    <p style="margin-top:12px;"><strong>Never just ask "have you decided?"</strong> &#8212; every touchpoint must add value.</p>
+  </div>
+</section>
+
+<!-- 16 CREATIVES -->
+<section id="creatives">
+  <h2><span class="num">16</span> Creative Templates</h2>
+  <p>Copy-ready content for all channels. Click <strong>Copy</strong> on any template.</p>
+
+  <div class="creative-card">
+    <div class="creative-header"><h4>LinkedIn Post 1 &#8212; "The Vision"</h4><span class="platform">LinkedIn</span></div>
+    <div class="creative-body">
+      <div class="copy-wrapper">
+        <button class="copy-btn" onclick="copyBlock(this)">&#128203; Copy</button>
+        <div class="copy-block">What happens when three generations live together on the banks of the Ganga?
+
+Children learn resilience from grandparents. Seniors find purpose in mentoring young minds. Artists draw inspiration from both.
+
+This isn't a fantasy. It's what we're building at RangaMati Vatika &#8212; a 75-unit intergenerational community on 97 Kathas of direct Ganga frontage at Uluberia, West Bengal.
+
+30 units for a Green Biophilic School (150 students)
+30 units for Senior Living (50 seniors)
+15 units for Boutique Hospitality
++ A Biophilic Studio for Visual &amp; Performing Arts
+
+The land is acquired. Bhoomi Puja is done. Construction begins this year.
+
+#BiophilicDesign #SeniorLiving #GangaFrontage #ImpactInvesting</div>
+      </div>
+      <div class="usage-note"><strong>Usage:</strong> Post Week 2. Attach masterplan aerial render. Do NOT mention investment details.</div>
+    </div>
+  </div>
+
+  <div class="creative-card">
+    <div class="creative-header"><h4>LinkedIn Post 2 &#8212; "The Track Record"</h4><span class="platform">LinkedIn</span></div>
+    <div class="creative-body">
+      <div class="copy-wrapper">
+        <button class="copy-btn" onclick="copyBlock(this)">&#128203; Copy</button>
+        <div class="copy-block">In 2025, we built a 15,000 sq.ft. biophilic pavilion at IIT Kharagpur for Durga Puja.
+
+1,00,000 people visited in 5 days. 30,00,000 watched online.
+
+Over 30 years, KarmYog for 21st Century Foundation has:
+&#10004; Built a permanent Biophilic Studio at IIT Kharagpur Research Park
+&#10004; Partnered with HIDCO for KarmYog Green Village
+&#10004; Trained hundreds of artisans in bamboo and sustainable construction
+
+Now we're building the flagship: RangaMati Vatika &#8212; 75 units on direct Ganga frontage.
+
+Next post: the investment opportunity.
+
+#KarmYog #BiophilicArchitecture #IITKharagpur #SustainableBuilding</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="creative-card">
+    <div class="creative-header"><h4>LinkedIn Post 3 &#8212; "The Opportunity"</h4><span class="platform">LinkedIn</span></div>
+    <div class="creative-body">
+      <div class="copy-wrapper">
+        <button class="copy-btn" onclick="copyBlock(this)">&#128203; Copy</button>
+        <div class="copy-block">India has 140 million seniors. Only 22,000 organized senior living units. Less than 1% penetration.
+
+RangaMati Vatika is a 75-unit intergenerational biophilic community on the Ganga at Uluberia:
+&#x2022; Direct Ganga frontage (finite, irreplaceable)
+&#x2022; &#8377;40L/unit on 99-year lease
+&#x2022; In-house construction at &#8377;2,000/sq.ft.
+&#x2022; 30 years of KarmYog Foundation track record
+
+We're seeking two anchor investors for Phase 1.
+
+DM me or email: reachus@ky21c.org
+
+#InvestmentOpportunity #SeniorLiving #HNI #GangaFrontage</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="creative-card">
+    <div class="creative-header"><h4>Broker Outreach</h4><span class="platform">WhatsApp</span></div>
+    <div class="creative-body">
+      <div class="copy-wrapper">
+        <button class="copy-btn" onclick="copyBlock(this)">&#128203; Copy</button>
+        <div class="copy-block whatsapp">Namaste [Broker Name] ji,
+
+I'm reaching out from KarmYog Foundation (IIT Kharagpur Research Park).
+
+RANGAMATI VATIKA &#8212; 75-unit biophilic community on direct Ganga frontage at Uluberia.
+
+For brokers:
+&#x2022; 3% commission on investor introductions that close
+&#x2022; &#8377;1Cr-&#8377;1.5Cr ticket size (HNI clients only)
+&#x2022; Land-backed + 2.0x projected returns
+&#x2022; All presentation materials provided by us
+
+Interested in a 10-minute call this week?
+
+[Name] | KarmYog Foundation | +91 9167719898</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="creative-card">
+    <div class="creative-header"><h4>Post-Meeting Follow-Up</h4><span class="platform">WhatsApp</span></div>
+    <div class="creative-body">
+      <div class="copy-wrapper">
+        <button class="copy-btn" onclick="copyBlock(this)">&#128203; Copy</button>
+        <div class="copy-block whatsapp">[Name] ji &#x1F64F;
+
+Thank you for your time today. It was wonderful discussing RangaMati Vatika with you.
+
+As promised:
+1. The visual investor deck (attached)
+2. Market data: India's organized senior living is only 22,000 units against 1.7M demand &#8212; less than 1% penetration.
+
+If you'd like to visit the site at Uluberia, I can arrange a trip any morning. The Ganga at sunrise is something that stays with you.
+
+Warm regards,
+[Name]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 17 SUCCESS -->
+<section id="success">
+  <h2><span class="num">17</span> Success Metrics</h2>
+  <table>
+    <tr><th>Metric</th><th>Target</th><th>Timeline</th></tr>
+    <tr><td>Warm leads contacted</td><td><strong>30</strong></td><td>Week 1-2</td></tr>
+    <tr><td>First meetings held</td><td><strong>8-10</strong></td><td>Week 2-3</td></tr>
+    <tr><td>Site visits conducted</td><td><strong>3-5</strong></td><td>Week 3-4</td></tr>
+    <tr><td>Serious prospects</td><td><strong>3-4</strong></td><td>Week 3-4</td></tr>
+    <tr><td>Investor 1 closed</td><td><strong>1</strong></td><td>Month 1</td></tr>
+    <tr><td>Investor 2 closed</td><td><strong>1</strong></td><td>Month 2-3</td></tr>
+  </table>
+</section>
+
+<footer>
+  <div class="brand">RangaMati Vatika &#8212; &#x09B0;&#x09BE;&#x0999;&#x09BE;&#x09AE;&#x09BE;&#x099F;&#x09BF; &#x09AC;&#x09BE;&#x099F;&#x09BF;&#x0995;&#x09BE;</div>
+  <p>A Living Garden on Red Soil</p>
+  <p style="margin-top:12px;">KarmYog for 21st Century Foundation &nbsp;|&nbsp; 401 IIT Kharagpur Research Park, Newtown Kolkata 700135</p>
+  <p>reachus@ky21c.org &nbsp;|&nbsp; +91 9167719898</p>
+  <p style="margin-top:16px; font-size:12px; opacity:0.4;">Confidential &#8212; March 2026</p>
+</footer>
+
+</main>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <button class="lightbox-nav prev" onclick="navLightbox(-1, event)">&#10094;</button>
+  <img id="lightboxImg" src="" alt="Render">
+  <button class="lightbox-nav next" onclick="navLightbox(1, event)">&#10095;</button>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const RENDERS = [
+  { key: '01', label: 'Temple Pavilion \u2014 Aerial River View', id: '1uXjTWXGIeNdtU4fHvy3LBOgBL1KYkfU1' },
+  { key: '02', label: 'Temple Pavilion \u2014 Ganges Wide', id: '1gI1GZK-rn_X4tfI234J_c4ldWdDIV_Bm' },
+  { key: '03', label: 'Temple Entrance \u2014 Living Walls', id: '1hh83Z783DxcGPGTb1Eg2zFhJijzN2IdG' },
+  { key: '04', label: 'Temple Front \u2014 Decorative Arch', id: '1ZnvVDrBxWR_ChGhhCZo8UYHXzrSusSuT' },
+  { key: '05', label: 'Masterplan \u2014 Aerial Full Complex', id: '1Fza9VkBOY4IowynQKxVsIIgFH-VUWnUn' },
+  { key: '06', label: 'Shiva Lingam \u2014 Meditation Deck', id: '1QKBtOJMUaeEkJkQIEgoa2l_HTKyPF1B4' },
+  { key: '07', label: 'Residential Pods \u2014 Aerial', id: '1QpJ63wvJFQFK9JmfkViunb6jWYhBKguy' },
+  { key: '08', label: 'Temple Pavilion \u2014 Ganges View', id: '1JhKX48s6Oqtc1NjWF50uwcJxVBwtI5kP' },
+  { key: '09', label: 'Bhoomi Puja Invitation', id: '19WvwSfDFjYku_EYxuNkGcLsoJXL7kx2M' },
+  { key: '10', label: 'Temple & Residential \u2014 Sunset', id: '1hQHSWKF2zXibCCap0fH_eybrHo6sN8Gz' },
+  { key: '11', label: 'Temple & Residential \u2014 Daytime', id: '1MYvqeXF22pnop4SlV9sXeaD-G22g4lny' },
+  { key: '12', label: 'River View \u2014 Full Complex', id: '1D0sQO29r7QaSI4PcqK3u_YPcEhXikpbP' },
+  { key: '13', label: 'Temple \u2014 Water Channel', id: '1Q7zZevzYakr7YdU92ztZxyK1bVF8WO9F' },
+  { key: '14', label: 'Riverfront Cottages', id: '1n6Sev_8Vc-iCRfHHOKXvqhlOPIid2IxU' },
+  { key: '15', label: 'Aerial \u2014 Temple & Shiva Area', id: '1xZU0NajQ48qXr-wYpBgKpaThCKk-nilA' },
+  { key: '16', label: 'Residential Pods \u2014 Boats', id: '1ObWSH5mqVg2uKrJxh4Y0f8-eKoYBQ0nX' },
+  { key: '17', label: 'Panoramic River View', id: '1b8gVq_t3S1r7X0S5AyN9QkzvQSzH6idw' },
+  { key: '18', label: 'Residential \u2014 Bridges', id: '1vTHT4iGpRDdGdNtbR8DjvNf1UTjkvRNY' },
+  { key: '19', label: 'Residential \u2014 Green Roofs', id: '1_7ygmtD7V1Hayw4_sG71Xp9SwqYriOA3' },
+  { key: '20', label: 'Living Walls & Garden', id: '1z7hS4skz4dt7fuGdeJ9FFMnJHqfxta70' },
+  { key: '21', label: 'Rock Fountain', id: '1XHSIu-ZTnjWaDXLzFskanR8b8oXrL6MA' },
+  { key: '22', label: 'Temple Durga Entrance', id: '1vVgRD675S_288w7bnkGNe8syGAchukMR' },
+];
+
+const MGMT_PHOTOS = [
+  { label: 'Mahacharya Sourabh J Sarkar', id: '1CeUkFpPuio0eokVhkSIKjgeTuLHKDqAR' },
+  { label: 'Ram Badrinathan', id: '1X-prTBMGyduoe2z-tGH4xm95lt9OBg1-' },
+  { label: 'Reena J Sarkar', id: '1m6Ng7pl7wvDZADcmfXx1VKcp3ef2VsQ2' },
+];
+
+const BHOOMI_PHOTOS = [
+  { label: 'Bhoomi Puja — Ceremony', id: '1YbS8JfpkWVtZVAONRDYRHd9nNfIBPYsI' },
+  { label: 'Bhoomi Puja — Prayers', id: '1veWF3jzUC4qY2weCxc4yoaOCiktKDyQq' },
+  { label: 'Bhoomi Puja — Gathering', id: '12YF5bxBOR2tbbdso6RiJV4su3C1FbwKL' },
+  { label: 'Bhoomi Puja — Sacred Rituals', id: '11-a0IFs37A07alflsaHE3Noc66kEMpN7' },
+  { label: 'Bhoomi Puja — Riverside', id: '18Hfe1fiYjf1I2RcJ2M-4m581dHoC_pnu' },
+  { label: 'Bhoomi Puja — Ganga Banks', id: '1MZ6ilMGGX8DOKSi5KFjHWzgMTChcNqof' },
+  { label: 'Bhoomi Puja — Blessing', id: '1QzdXLugsAq08aBvPoSrZlb-52IX8OMA6' },
+  { label: 'Bhoomi Puja — Group', id: '1Hy2MZH45UBP_Waq0r0MsNbYlalj3POGY' },
+  { label: 'Bhoomi Puja — Assembly', id: '1m3WcwMTKYcC9l1w59_36Guy5WuQe8BBB' },
+  { label: 'Bhoomi Puja — Prayers', id: '1l-pDRq4w_vwrjhzRHYEec_alZerGLMiW' },
+  { label: 'Bhoomi Puja — Offerings', id: '1bfripQo829j-fFOyP95HgB0ouRa-aCck' },
+  { label: 'Bhoomi Puja — Sacred Fire', id: '1imREVi1WNngcG50DuHKY4WbmZODNXCKf' },
+  { label: 'Bhoomi Puja — Ceremony', id: '1YVxSLymUMCmcd5bEvF9sQSyqc6uI00c7' },
+  { label: 'Bhoomi Puja — Blessings', id: '1bGq2ZegIEa046OlL6G2PWOFm5tDA4An6' },
+];
+
+let activeGallery = RENDERS;
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Render gallery
+  const gallery = document.getElementById('renderGallery');
+  RENDERS.forEach((r, i) => {
+    const div = document.createElement('div');
+    div.className = 'gallery-item';
+    div.onclick = () => { activeGallery = RENDERS; openLightbox(i); };
+    div.innerHTML = `<img src="https://drive.google.com/thumbnail?id=${r.id}&sz=w600" alt="${r.label}" loading="lazy"><div class="gallery-label">#${r.key} ${r.label}</div>`;
+    gallery.appendChild(div);
+  });
+
+  // Bhoomi Puja gallery
+  const bhoomiGallery = document.getElementById('bhoomiGallery');
+  BHOOMI_PHOTOS.forEach((p, i) => {
+    const div = document.createElement('div');
+    div.className = 'gallery-item';
+    div.onclick = () => { activeGallery = BHOOMI_PHOTOS; openLightbox(i); };
+    div.innerHTML = `<img src="https://drive.google.com/thumbnail?id=${p.id}&sz=w600" alt="${p.label}" loading="lazy"><div class="gallery-label">${p.label}</div>`;
+    bhoomiGallery.appendChild(div);
+  });
+
+  // Scroll spy
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.sidebar nav a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        const link = document.querySelector(`.sidebar nav a[href="#${entry.target.id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+});
+
+function copyBlock(btn) {
+  const wrapper = btn.closest('.copy-wrapper');
+  const block = wrapper.querySelector('.copy-block, blockquote');
+  const text = block.innerText.trim();
+  navigator.clipboard.writeText(text).then(() => {
+    btn.innerHTML = '&#10003; Copied!';
+    btn.classList.add('copied');
+    showToast('Copied to clipboard');
+    setTimeout(() => { btn.innerHTML = '&#128203; Copy'; btn.classList.remove('copied'); }, 2000);
+  }).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    btn.innerHTML = '&#10003; Copied!';
+    btn.classList.add('copied');
+    showToast('Copied to clipboard');
+    setTimeout(() => { btn.innerHTML = '&#128203; Copy'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+let currentLightboxIndex = 0;
+function openLightbox(i) {
+  currentLightboxIndex = i;
+  const r = activeGallery[i];
+  document.getElementById('lightboxImg').src = `https://drive.google.com/thumbnail?id=${r.id}&sz=w1400`;
+  document.getElementById('lightboxImg').alt = r.label;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function openMediaLightbox(type, i) {
+  activeGallery = type === 'mgmt' ? MGMT_PHOTOS : BHOOMI_PHOTOS;
+  openLightbox(i);
+}
+function closeLightbox(e) {
+  if (e && e.target !== e.currentTarget && !e.target.classList.contains('lightbox-close')) return;
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function navLightbox(dir, e) {
+  e && e.stopPropagation();
+  currentLightboxIndex = (currentLightboxIndex + dir + activeGallery.length) % activeGallery.length;
+  openLightbox(currentLightboxIndex);
+}
+document.addEventListener('keydown', (e) => {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') navLightbox(-1);
+  if (e.key === 'ArrowRight') navLightbox(1);
+});
+
+function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); }
+document.querySelectorAll('.sidebar nav a').forEach(a => {
+  a.addEventListener('click', () => { if (window.innerWidth <= 900) document.getElementById('sidebar').classList.remove('open'); });
+});
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+</script>
+</body>
+</html>

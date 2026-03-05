@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranga Matti - Investor Deck | KarmYog for 21st Century</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2c5282;
+            --accent: #c69c6d;
+            --accent-light: #d4a574;
+            --gold: #d4af37;
+            --success: #38a169;
+            --bg-cream: #faf8f5;
+            --text-dark: #1a202c;
+            --text-muted: #4a5568;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .slide {
+            min-height: 100vh;
+            padding: 60px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            page-break-after: always;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            font-size: 0.9em;
+            color: var(--text-muted);
+            opacity: 0.6;
+        }
+
+        .cover {
+            background: linear-gradient(135deg, rgba(26, 54, 93, 0.92) 0%, rgba(44, 82, 130, 0.88) 100%),
+                        url('https://drive.google.com/thumbnail?id=1b8gVq_t3S1r7X0S5AyN9QkzvQSzH6idw&sz=w1200') center/cover;
+            color: white;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cover-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 24px;
+            border-radius: 30px;
+            font-size: 0.85em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .cover h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .cover .bengali {
+            font-size: 1.8em;
+            opacity: 0.9;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .cover .tagline {
+            font-size: 1.4em;
+            opacity: 0.85;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .cover-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 40px;
+        }
+
+        .cover-stat {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 20px 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .cover-stat .value {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--accent-light);
+        }
+
+        .cover-stat .label {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+
+        .cover-footer {
+            position: absolute;
+            bottom: 40px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            opacity: 0.7;
+            font-size: 0.9em;
+        }
+
+        .section-label {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .slide h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8em;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .slide .subtitle {
+            font-size: 1.2em;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin-bottom: 40px;
+        }
+
+        .image-panel {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .image-panel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .image-strip .image-panel {
+            height: 180px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .card h4 {
+            color: var(--primary);
+            font-size: 1.15em;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95em;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .stat-box {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border-top: 4px solid var(--accent);
+        }
+
+        .stat-box .value {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .stat-box .label {
+            color: var(--text-muted);
+            font-size: 0.9em;
+            margin-top: 8px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .data-table th {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 18px 20px;
+            text-align: left;
+            font-weight: 500;
+            font-size: 0.9em;
+            letter-spacing: 0.5px;
+        }
+
+        .data-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid #edf2f7;
+            font-size: 0.95em;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table tr:hover {
+            background: #f7fafc;
+        }
+
+        .data-table .highlight {
+            background: linear-gradient(135deg, #ebf8ff 0%, #e6fffa 100%);
+            font-weight: 600;
+        }
+
+        .data-table .amount {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 35px;
+            margin: 30px 0;
+        }
+
+        .highlight-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+        }
+
+        .highlight-box p {
+            opacity: 0.9;
+            font-size: 1.05em;
+        }
+
+        .investment-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        .investment-card.featured {
+            border: 3px solid var(--gold);
+        }
+
+        .investment-card .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+        }
+
+        .investment-card.featured .header {
+            background: linear-gradient(135deg, var(--gold) 0%, #e6c64a 100%);
+            color: var(--primary);
+        }
+
+        .investment-card .header h3 {
+            font-size: 1.3em;
+            margin-bottom: 5px;
+        }
+
+        .investment-card .header .status {
+            font-size: 0.85em;
+            opacity: 0.9;
+        }
+
+        .investment-card .body {
+            padding: 30px;
+        }
+
+        .investment-card .amount {
+            font-size: 2.8em;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .investment-card .benefits {
+            list-style: none;
+        }
+
+        .investment-card .benefits li {
+            padding: 12px 0;
+            border-bottom: 1px solid #edf2f7;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .investment-card .benefits li:last-child {
+            border-bottom: none;
+        }
+
+        .investment-card .check {
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        .investment-card .return-badge {
+            background: linear-gradient(135deg, var(--success) 0%, #48bb78 100%);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--accent), var(--primary));
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 25px 30px;
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 30px;
+            width: 16px;
+            height: 16px;
+            background: white;
+            border: 4px solid var(--accent);
+            border-radius: 50%;
+        }
+
+        .timeline-item h4 {
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .timeline-item .period {
+            display: inline-block;
+            background: #ebf8ff;
+            color: var(--primary-light);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            margin-bottom: 10px;
+        }
+
+        .quote-block {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-left: 5px solid var(--accent);
+            padding: 30px 40px;
+            margin: 30px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .quote-block p {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3em;
+            color: var(--primary);
+            font-style: italic;
+        }
+
+        .cta-slide {
+            background: linear-gradient(135deg, rgba(26, 54, 93, 0.92) 0%, rgba(44, 82, 130, 0.88) 100%),
+                        url('https://drive.google.com/thumbnail?id=1QKBtOJMUaeEkJkQIEgoa2l_HTKyPF1B4&sz=w1200') center/cover;
+            color: white;
+            text-align: center;
+        }
+
+        .cta-slide h2 {
+            color: white;
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .cta-slide .subtitle {
+            color: rgba(255,255,255,0.85);
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .cta-steps {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .cta-step {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .cta-step .num {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .cta-step span {
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+
+        .diff-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .diff-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+        }
+
+        .diff-item .num {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.85em;
+        }
+
+        .diff-item p {
+            color: var(--text-dark);
+            font-size: 0.9em;
+        }
+
+        .financial-hero {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .financial-hero-box {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .financial-hero-box.accent {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+        }
+
+        .financial-hero-box.success {
+            background: linear-gradient(135deg, var(--success) 0%, #48bb78 100%);
+        }
+
+        .financial-hero-box .value {
+            font-size: 3em;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .financial-hero-box .label {
+            opacity: 0.9;
+            margin-top: 10px;
+            font-size: 1em;
+        }
+
+        .featured-image {
+            margin: 40px 0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .gallery-grid .main {
+            grid-row: span 2;
+            height: 350px;
+        }
+
+        .gallery-grid .side {
+            height: 167px;
+        }
+
+        .gallery-grid .image-panel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .location-slide {
+            background: linear-gradient(135deg, rgba(250, 248, 245, 0.95) 0%, rgba(250, 248, 245, 0.9) 100%),
+                        url('https://drive.google.com/thumbnail?id=1D0sQO29r7QaSI4PcqK3u_YPcEhXikpbP&sz=w1200') center/cover fixed;
+        }
+
+        @media print {
+            .slide {
+                page-break-after: always;
+                padding: 40px;
+            }
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .slide { padding: 40px 30px; }
+            .cover h1 { font-size: 3em; }
+            .two-col, .stats-grid, .diff-grid { grid-template-columns: 1fr; }
+            .financial-hero { grid-template-columns: 1fr; }
+            .cta-steps { flex-direction: column; align-items: center; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .gallery-grid .main, .gallery-grid .side { height: 200px; grid-row: auto; }
+            .cover-stats { flex-wrap: wrap; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SLIDE 1: Cover -->
+    <div class="slide cover">
+        <div class="cover-badge">Confidential Investor Deck</div>
+        <p class="bengali">রাঙা মাটি</p>
+        <h1>RANGA MATTI</h1>
+        <p class="tagline">Senior Living & Baal Vridhashram | Ganga Frontage</p>
+
+        <div class="cover-stats">
+            <div class="cover-stat">
+                <div class="value">₹25 Cr</div>
+                <div class="label">Gross Revenue</div>
+            </div>
+            <div class="cover-stat">
+                <div class="value">50</div>
+                <div class="label">Units</div>
+            </div>
+            <div class="cover-stat">
+                <div class="value">₹2.5 Cr</div>
+                <div class="label">Seed Round</div>
+            </div>
+            <div class="cover-stat">
+                <div class="value">2.5x</div>
+                <div class="label">Investor 1 Return</div>
+            </div>
+        </div>
+
+        <div class="cover-footer">
+            KarmYog for 21st Century | Uluberia, West Bengal | January 2026
+        </div>
+    </div>
+
+    <!-- SLIDE 2: The Opportunity -->
+    <div class="slide">
+        <span class="section-label">The Opportunity</span>
+        <h2>₹2.5 Crores Seed Round Open</h2>
+        <p class="subtitle">A biophilic senior living community on the banks of River Ganga. All units offered on 99-year long-term lease.</p>
+
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="value">~64</div>
+                <div class="label">Kathas of Land</div>
+            </div>
+            <div class="stat-box">
+                <div class="value">50,000</div>
+                <div class="label">Sq. Ft. Built-up</div>
+            </div>
+            <div class="stat-box">
+                <div class="value">₹50L</div>
+                <div class="label">Per Unit Lease</div>
+            </div>
+            <div class="stat-box">
+                <div class="value">40%</div>
+                <div class="label">Net Margin</div>
+            </div>
+        </div>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Investor</th>
+                    <th>Amount</th>
+                    <th>Equity</th>
+                    <th>Land</th>
+                    <th>Timeline</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="highlight">
+                    <td><strong>Investor 1</strong></td>
+                    <td class="amount">₹1 Crore</td>
+                    <td>25%</td>
+                    <td>16 Kathas</td>
+                    <td><strong>Immediate</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Investor 2</strong></td>
+                    <td class="amount">₹1.5 Crores</td>
+                    <td>25%</td>
+                    <td>16 Kathas</td>
+                    <td>Phase 2</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="highlight-box">
+            <h3>Projected Returns: 2.5x (Inv 1) | 1.67x (Inv 2) in 18–24 months</h3>
+            <p>Unit Model: 99-Year Long-Term Lease. Land acquired, Bhoomi Puja completed, ready to build.</p>
+        </div>
+
+        <span class="slide-number">02</span>
+    </div>
+
+    <!-- SLIDE 3: About the Promoter -->
+    <div class="slide">
+        <span class="section-label">About the Promoter</span>
+        <h2>KarmYog for 21st Century</h2>
+        <p class="subtitle">10 years of biophilic excellence. A specialist design-build firm with in-house design, in-house execution, and end-to-end delivery.</p>
+
+        <div class="card-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 30px;">
+            <div class="card" style="padding: 20px; text-align: center;">
+                <div style="font-size: 2em; margin-bottom: 10px;">&#x1F3D7;&#xFE0F;</div>
+                <h4 style="font-size: 0.95em;">In-house Design</h4>
+                <p style="font-size: 0.8em;">All biophilic design conceived internally</p>
+            </div>
+            <div class="card" style="padding: 20px; text-align: center;">
+                <div style="font-size: 2em; margin-bottom: 10px;">&#x1F528;</div>
+                <h4 style="font-size: 0.95em;">In-house Execution</h4>
+                <p style="font-size: 0.8em;">Our trained teams build &mdash; no contractors</p>
+            </div>
+            <div class="card" style="padding: 20px; text-align: center;">
+                <div style="font-size: 2em; margin-bottom: 10px;">&#x1F3AF;</div>
+                <h4 style="font-size: 0.95em;">End-to-end Delivery</h4>
+                <p style="font-size: 0.8em;">Single point accountability from concept to keys</p>
+            </div>
+            <div class="card" style="padding: 20px; text-align: center;">
+                <div style="font-size: 2em; margin-bottom: 10px;">&#x2705;</div>
+                <h4 style="font-size: 0.95em;">Proven Track Record</h4>
+                <p style="font-size: 0.8em;">10 years of successful biophilic projects</p>
+            </div>
+        </div>
+
+        <h3 style="color: var(--primary); margin-bottom: 20px;">Why This Matters for Investors</h3>
+        <table class="data-table">
+            <tr>
+                <td><strong>No Third-Party Risk</strong></td>
+                <td>No external contractor dependency</td>
+                <td><strong>No Contractor Margins</strong></td>
+                <td>Direct cost savings passed to project</td>
+            </tr>
+            <tr>
+                <td><strong>Design Integrity</strong></td>
+                <td>Vision translates to execution without dilution</td>
+                <td><strong>Unified Accountability</strong></td>
+                <td>Single team, single point of responsibility</td>
+            </tr>
+        </table>
+
+        <div class="highlight-box" style="margin-top: 30px;">
+            <h3>KarmYog Has Already Invested ₹70 Lakhs</h3>
+            <p>In land acquisition and approvals. Skin in the game &mdash; the promoter is committed.</p>
+        </div>
+
+        <span class="slide-number">03</span>
+    </div>
+
+    <!-- SLIDE 4: The Project -->
+    <div class="slide">
+        <span class="section-label">The Project</span>
+        <h2>Ranga Matti (Red Soil)</h2>
+        <p class="subtitle">A biophilic senior living community on the banks of River Ganga.</p>
+
+        <div class="gallery-grid">
+            <div class="image-panel main">
+                <img src="https://drive.google.com/thumbnail?id=1Fza9VkBOY4IowynQKxVsIIgFH-VUWnUn&sz=w1200" alt="Masterplan Aerial View">
+            </div>
+            <div class="image-panel side">
+                <img src="https://drive.google.com/thumbnail?id=1QpJ63wvJFQFK9JmfkViunb6jWYhBKguy&sz=w1200" alt="Residential Pods">
+            </div>
+            <div class="image-panel side">
+                <img src="https://drive.google.com/thumbnail?id=1_7ygmtD7V1Hayw4_sG71Xp9SwqYriOA3&sz=w1200" alt="Green Roofs">
+            </div>
+        </div>
+
+        <div class="two-col">
+            <div>
+                <h3 style="color: var(--primary); margin-bottom: 20px;">Project Snapshot</h3>
+                <table class="data-table">
+                    <tr>
+                        <td>Location</td>
+                        <td class="amount">Uluberia, West Bengal</td>
+                    </tr>
+                    <tr>
+                        <td>Land Area</td>
+                        <td class="amount">~64 Kathas</td>
+                    </tr>
+                    <tr>
+                        <td>Total Built Area</td>
+                        <td class="amount">50,000 sq. ft.</td>
+                    </tr>
+                    <tr>
+                        <td>Total Units</td>
+                        <td class="amount">50 Units (1,000 sq. ft. each)</td>
+                    </tr>
+                    <tr>
+                        <td>Structure</td>
+                        <td class="amount">5 Pods &times; 2 Levels &times; 5,000 sq. ft.</td>
+                    </tr>
+                    <tr>
+                        <td>Target Lessee</td>
+                        <td class="amount">Senior Citizens</td>
+                    </tr>
+                    <tr>
+                        <td>Unit Lease Price</td>
+                        <td class="amount">₹50 Lakhs each (99-year lease)</td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <div class="image-panel" style="margin-bottom: 20px;">
+                    <img src="https://drive.google.com/thumbnail?id=1ObWSH5mqVg2uKrJxh4Y0f8-eKoYBQ0nX&sz=w1200" alt="Pods Aerial" style="height: 200px;">
+                </div>
+                <div class="image-panel">
+                    <img src="https://drive.google.com/thumbnail?id=1XHSIu-ZTnjWaDXLzFskanR8b8oXrL6MA&sz=w1200" alt="Water Feature" style="height: 200px;">
+                </div>
+            </div>
+        </div>
+
+        <span class="slide-number">04</span>
+    </div>
+
+    <!-- SLIDE 5: Location -->
+    <div class="slide location-slide">
+        <span class="section-label">Location</span>
+        <h2>Direct Ganga Frontage &mdash; Irreplaceable Asset</h2>
+        <p class="subtitle">Uluberia, West Bengal &mdash; Direct access to River Ganga near the sacred Ganga-Damodar confluence.</p>
+
+        <div class="image-strip">
+            <div class="image-panel">
+                <img src="https://drive.google.com/thumbnail?id=1uXjTWXGIeNdtU4fHvy3LBOgBL1KYkfU1&sz=w1200" alt="River View">
+            </div>
+            <div class="image-panel">
+                <img src="https://drive.google.com/thumbnail?id=1gI1GZK-rn_X4tfI234J_c4ldWdDIV_Bm&sz=w1200" alt="Ganga Aerial">
+            </div>
+            <div class="image-panel">
+                <img src="https://drive.google.com/thumbnail?id=1JhKX48s6Oqtc1NjWF50uwcJxVBwtI5kP&sz=w1200" alt="Temple Pavilion">
+            </div>
+        </div>
+
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon">&#x1F30A;</div>
+                <h4>Stunning Ganga Frontage</h4>
+                <p>Direct river access. Riverfront land is finite and increasingly scarce &mdash; an irreplaceable asset.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">&#x1F3E5;</div>
+                <h4>Healthcare Access</h4>
+                <p>Close to Uluberia Medical Hub &mdash; critical for senior living residents.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">&#x1F697;</div>
+                <h4>Kolkata Connectivity</h4>
+                <p>~1.5 hours from Central Kolkata. ~45 km from Howrah Station. ~5 km from Uluberia Town.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">&#x1F64F;</div>
+                <h4>Spiritual Significance</h4>
+                <p>Near Ganga-Damodar confluence. Ganga for daily rituals, spiritual connection, and ceremonies.</p>
+            </div>
+        </div>
+
+        <div class="quote-block">
+            <p>"Peaceful, away from urban congestion. Accessible for family visits from Kolkata. Perfect for a dignified, spiritually enriched retirement."</p>
+        </div>
+
+        <span class="slide-number">05</span>
+    </div>
+
+    <!-- SLIDE 6: Biophilic Design -->
+    <div class="slide">
+        <span class="section-label">Design Philosophy</span>
+        <h2>The Biophilic Difference &mdash; Buildings That Breathe</h2>
+        <p class="subtitle">Living architecture integrating nature into every aspect of the senior living experience.</p>
+
+        <div class="image-strip">
+            <div class="image-panel">
+                <img src="https://drive.google.com/thumbnail?id=1hh83Z783DxcGPGTb1Eg2zFhJijzN2IdG&sz=w1200" alt="Living Walls">
+            </div>
+            <div class="image-panel">
+                <img src="https://drive.google.com/thumbnail?id=1hQHSWKF2zXibCCap0fH_eybrHo6sN8Gz&sz=w1200" alt="Golden Hour">
+            </div>
+            <div class="image-panel">
+                <img src="https://drive.google.com/thumbnail?id=1xZU0NajQ48qXr-wYpBgKpaThCKk-nilA&sz=w1200" alt="Spiritual Spaces">
+            </div>
+        </div>
+
+        <div class="card-grid" style="grid-template-columns: repeat(4, 1fr);">
+            <div class="card" style="padding: 20px;">
+                <h4 style="font-size: 1em;">Vertical Gardens</h4>
+                <p style="font-size: 0.85em;">Living walls wrapping all building facades</p>
+            </div>
+            <div class="card" style="padding: 20px;">
+                <h4 style="font-size: 1em;">Green Roofs</h4>
+                <p style="font-size: 0.85em;">Planted rooftops on every pod</p>
+            </div>
+            <div class="card" style="padding: 20px;">
+                <h4 style="font-size: 1em;">Water Channels</h4>
+                <p style="font-size: 0.85em;">Internal streams flowing through the complex</p>
+            </div>
+            <div class="card" style="padding: 20px;">
+                <h4 style="font-size: 1em;">Organic Forms</h4>
+                <p style="font-size: 0.85em;">Octagonal pods &mdash; not rectangular boxes</p>
+            </div>
+        </div>
+
+        <h3 style="color: var(--primary); margin: 30px 0 20px;">Wellness Benefits for Seniors</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Element</th>
+                    <th>Benefit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Living Walls</td>
+                    <td>Air purification, stress reduction</td>
+                </tr>
+                <tr>
+                    <td>Water Features</td>
+                    <td>Sound therapy, natural cooling</td>
+                </tr>
+                <tr>
+                    <td>Green Roofs</td>
+                    <td>Temperature moderation</td>
+                </tr>
+                <tr>
+                    <td>River Views</td>
+                    <td>Mental well-being, spiritual peace</td>
+                </tr>
+                <tr>
+                    <td>Garden Pathways</td>
+                    <td>Gentle exercise, sensory engagement</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <span class="slide-number">06</span>
+    </div>
+
+    <!-- SLIDE 7: Financial Model -->
+    <div class="slide">
+        <span class="section-label">Financials</span>
+        <h2>Revenue & Cost Model</h2>
+        <p class="subtitle">Clear path to ₹25 Crore gross revenue with 40% net margin.</p>
+
+        <div class="financial-hero">
+            <div class="financial-hero-box">
+                <div class="value">₹25 Cr</div>
+                <div class="label">Gross Revenue</div>
+            </div>
+            <div class="financial-hero-box accent">
+                <div class="value">₹15 Cr</div>
+                <div class="label">Total Project Cost</div>
+            </div>
+            <div class="financial-hero-box success">
+                <div class="value">₹10 Cr</div>
+                <div class="label">Net Surplus (40%)</div>
+            </div>
+        </div>
+
+        <div class="two-col">
+            <div>
+                <h3 style="color: var(--primary); margin-bottom: 20px;">Revenue Model</h3>
+                <table class="data-table">
+                    <tr>
+                        <td>Total Units</td>
+                        <td class="amount">50</td>
+                    </tr>
+                    <tr>
+                        <td>Lease Price per Unit</td>
+                        <td class="amount">₹50 Lakhs</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td><strong>Gross Revenue</strong></td>
+                        <td class="amount"><strong>₹25 Crores</strong></td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <h3 style="color: var(--primary); margin-bottom: 20px;">Cost Breakdown</h3>
+                <table class="data-table">
+                    <tr>
+                        <td>Construction</td>
+                        <td class="amount">₹10 Cr</td>
+                    </tr>
+                    <tr>
+                        <td>Marketing & Leasing</td>
+                        <td class="amount">₹2.5 Cr</td>
+                    </tr>
+                    <tr>
+                        <td>Other Expenses</td>
+                        <td class="amount">₹2.5 Cr</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td><strong>Total Cost</strong></td>
+                        <td class="amount"><strong>₹15 Crores</strong></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div style="background: #f7fafc; padding: 25px; border-radius: 12px; margin-top: 30px;">
+            <h4 style="color: var(--primary); margin-bottom: 15px;">Unit Economics</h4>
+            <div style="display: flex; gap: 50px;">
+                <div><strong>Revenue per unit:</strong> ₹50 Lakhs</div>
+                <div><strong>Construction cost:</strong> ₹2,000/sq. ft. &times; 50,000 sq. ft. = ₹10 Cr</div>
+                <div><strong>Net margin:</strong> 40%</div>
+            </div>
+        </div>
+
+        <span class="slide-number">07</span>
+    </div>
+
+    <!-- SLIDE 8: Investment Structure -->
+    <div class="slide">
+        <span class="section-label">Investment</span>
+        <h2>Investment Structure</h2>
+        <p class="subtitle">Join as equity partners with land ownership and proportionate profit share. Total raise: ₹2.5 Crores.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 40px 0;">
+            <div class="investment-card">
+                <div class="header">
+                    <h3>KarmYog (Promoter)</h3>
+                    <div class="status">Already Invested</div>
+                </div>
+                <div class="body">
+                    <div class="amount">₹70 L</div>
+                    <ul class="benefits">
+                        <li><span class="check">&#10003;</span> 50% Land Ownership</li>
+                        <li><span class="check">&#10003;</span> 50% Company Equity</li>
+                        <li><span class="check">&#10003;</span> 32 Kathas</li>
+                        <li><span class="check">&#10003;</span> Design & Execution Lead</li>
+                    </ul>
+                </div>
+                <div class="return-badge">50% Profit Share</div>
+            </div>
+
+            <div class="investment-card featured">
+                <div class="header">
+                    <h3>Investor 1</h3>
+                    <div class="status">OPEN &mdash; Immediate</div>
+                </div>
+                <div class="body">
+                    <div class="amount">₹1 Cr</div>
+                    <ul class="benefits">
+                        <li><span class="check">&#10003;</span> 25% Land Ownership</li>
+                        <li><span class="check">&#10003;</span> 25% Company Equity</li>
+                        <li><span class="check">&#10003;</span> 16 Kathas</li>
+                        <li><span class="check">&#10003;</span> Board Participation</li>
+                    </ul>
+                </div>
+                <div class="return-badge">₹2.5 Cr Return (2.5x)</div>
+            </div>
+
+            <div class="investment-card">
+                <div class="header">
+                    <h3>Investor 2</h3>
+                    <div class="status">OPEN &mdash; Phase 2</div>
+                </div>
+                <div class="body">
+                    <div class="amount">₹1.5 Cr</div>
+                    <ul class="benefits">
+                        <li><span class="check">&#10003;</span> 25% Land Ownership</li>
+                        <li><span class="check">&#10003;</span> 25% Company Equity</li>
+                        <li><span class="check">&#10003;</span> 16 Kathas</li>
+                        <li><span class="check">&#10003;</span> Board Participation</li>
+                    </ul>
+                </div>
+                <div class="return-badge">₹2.5 Cr Return (1.67x)</div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Total Capital: ₹2.5 Crores | Total Land: ~64 Kathas | Total Equity: 100%</h3>
+            <p>Land-backed ownership provides tangible asset security. All units offered on 99-year long-term lease. Riverfront property values have historically appreciated at premium rates.</p>
+        </div>
+
+        <span class="slide-number">08</span>
+    </div>
+
+    <!-- SLIDE 9: Use of Funds -->
+    <div class="slide">
+        <span class="section-label">Deployment</span>
+        <h2>Use of Funds</h2>
+        <p class="subtitle">Phased deployment across two tranches to maximize capital efficiency.</p>
+
+        <div class="two-col">
+            <div>
+                <h3 style="color: var(--primary); margin-bottom: 20px;">Phase 1: ₹1 Crore (Immediate)</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Deployment</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Site Preparation</td>
+                            <td>Ground leveling, basic infrastructure</td>
+                        </tr>
+                        <tr class="highlight">
+                            <td><strong>Showcase Pod</strong></td>
+                            <td>First pod to demonstrate biophilic living</td>
+                        </tr>
+                        <tr>
+                            <td>Initial Landscaping</td>
+                            <td>Gardens, water features, pathways</td>
+                        </tr>
+                        <tr>
+                            <td>Marketing Collateral</td>
+                            <td>Investor deck, brochures, renders</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="quote-block" style="margin-top: 20px;">
+                    <p style="font-size: 1.1em;">"Build the Showcase Pod to attract senior citizens to take 99-year leases on ₹50 Lakh units."</p>
+                </div>
+            </div>
+            <div>
+                <h3 style="color: var(--primary); margin-bottom: 20px;">Phase 2: ₹1.5 Crores</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Deployment</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Construction Acceleration</td>
+                            <td>Scale up pod development</td>
+                        </tr>
+                        <tr>
+                            <td>Marketing Campaign</td>
+                            <td>Senior citizen outreach</td>
+                        </tr>
+                        <tr>
+                            <td>Pre-leasing Operations</td>
+                            <td>Leasing team, site office</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="image-panel" style="margin-top: 25px;">
+                    <img src="https://drive.google.com/thumbnail?id=19WvwSfDFjYku_EYxuNkGcLsoJXL7kx2M&sz=w1200" alt="Bhoomi Puja" style="height: 180px;">
+                </div>
+            </div>
+        </div>
+
+        <span class="slide-number">09</span>
+    </div>
+
+    <!-- SLIDE 10: Returns & Exit -->
+    <div class="slide">
+        <span class="section-label">Returns</span>
+        <h2>Projected Returns & Exit</h2>
+        <p class="subtitle">Multiple exit paths with strong return multiples for both investors.</p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Investor</th>
+                    <th>Investment</th>
+                    <th>Return (25% of ₹10 Cr)</th>
+                    <th>Multiple</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="highlight">
+                    <td><strong>Investor 1</strong></td>
+                    <td class="amount">₹1 Crore</td>
+                    <td class="amount">₹2.5 Crores</td>
+                    <td class="amount"><strong>2.5x</strong></td>
+                </tr>
+                <tr class="highlight">
+                    <td><strong>Investor 2</strong></td>
+                    <td class="amount">₹1.5 Crores</td>
+                    <td class="amount">₹2.5 Crores</td>
+                    <td class="amount"><strong>1.67x</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 style="color: var(--primary); margin: 30px 0 20px;">Exit Options</h3>
+        <div class="card-grid" style="grid-template-columns: repeat(4, 1fr);">
+            <div class="card" style="padding: 20px;">
+                <h4 style="font-size: 1em;">Profit Share</h4>
+                <p style="font-size: 0.85em;">Receive ₹2.5 Crores cash on project completion</p>
+            </div>
+            <div class="card" style="padding: 20px;">
+                <h4 style="font-size: 1em;">Lease Rights</h4>
+                <p style="font-size: 0.85em;">Take 12-13 unit lease rights and sub-lease</p>
+            </div>
+            <div class="card" style="padding: 20px;">
+                <h4 style="font-size: 1em;">Land Buyback</h4>
+                <p style="font-size: 0.85em;">KarmYog may offer premium buyback</p>
+            </div>
+            <div class="card" style="padding: 20px;">
+                <h4 style="font-size: 1em;">Secondary Transfer</h4>
+                <p style="font-size: 0.85em;">Transfer stake to later-stage investors</p>
+            </div>
+        </div>
+
+        <h3 style="color: var(--primary); margin: 30px 0 20px;">Timeline to Exit</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="period">6-8 Months</span>
+                <h4>Showcase Pod Ready</h4>
+                <p>First pod completed, demonstrating the biophilic living concept to prospective lessees.</p>
+            </div>
+            <div class="timeline-item">
+                <span class="period">Month 8-10</span>
+                <h4>Pre-leasing Begins</h4>
+                <p>Active outreach to senior citizens. Lease agreements for 99-year units.</p>
+            </div>
+            <div class="timeline-item">
+                <span class="period">18-24 Months</span>
+                <h4>Project Completion</h4>
+                <p>All 5 pods built, landscaping complete, community operational.</p>
+            </div>
+            <div class="timeline-item">
+                <span class="period">18-30 Months</span>
+                <h4>Investor Exit</h4>
+                <p>Full returns realized through profit share or alternative exit paths.</p>
+            </div>
+        </div>
+
+        <span class="slide-number">10</span>
+    </div>
+
+    <!-- SLIDE 11: Why Invest Now -->
+    <div class="slide">
+        <span class="section-label">Why Now</span>
+        <h2>Why Invest Now?</h2>
+        <p class="subtitle">Early mover advantage with land-backed security and a proven promoter.</p>
+
+        <div class="diff-grid">
+            <div class="diff-item">
+                <div class="num">1</div>
+                <p><strong>Ground Floor Entry</strong> &mdash; Lowest valuation, highest returns</p>
+            </div>
+            <div class="diff-item">
+                <div class="num">2</div>
+                <p><strong>Land-Backed Security</strong> &mdash; Your investment tied to real asset</p>
+            </div>
+            <div class="diff-item">
+                <div class="num">3</div>
+                <p><strong>Proven Promoter</strong> &mdash; KarmYog's 10-year track record</p>
+            </div>
+            <div class="diff-item">
+                <div class="num">4</div>
+                <p><strong>Skin in the Game</strong> &mdash; KarmYog has ₹70 Lakhs invested</p>
+            </div>
+            <div class="diff-item">
+                <div class="num">5</div>
+                <p><strong>Growing Market</strong> &mdash; Senior living is a booming sector</p>
+            </div>
+            <div class="diff-item">
+                <div class="num">6</div>
+                <p><strong>Unique Product</strong> &mdash; Biophilic + Ganga = No competition</p>
+            </div>
+        </div>
+
+        <h3 style="color: var(--primary); margin: 30px 0 20px;">Risk Mitigation</h3>
+        <table class="data-table">
+            <tr>
+                <td><span style="color: var(--success); font-weight: 600;">&#10003; Completed</span></td>
+                <td>Land already acquired and registered</td>
+            </tr>
+            <tr>
+                <td><span style="color: var(--success); font-weight: 600;">&#10003; Completed</span></td>
+                <td>Bhoomi Puja completed</td>
+            </tr>
+            <tr>
+                <td><span style="color: var(--accent); font-weight: 600;">In Progress</span></td>
+                <td>Regulatory approvals</td>
+            </tr>
+            <tr>
+                <td><span style="color: var(--success); font-weight: 600;">&#10003; Confirmed</span></td>
+                <td>KarmYog executes in-house (no contractor dependency)</td>
+            </tr>
+            <tr>
+                <td><span style="color: var(--success); font-weight: 600;">&#10003; Market</span></td>
+                <td>Senior living demand is recession-resistant</td>
+            </tr>
+        </table>
+
+        <div class="featured-image" style="margin-top: 30px;">
+            <img src="https://drive.google.com/thumbnail?id=1ZnvVDrBxWR_ChGhhCZo8UYHXzrSusSuT&sz=w1200" alt="Temple Entrance" style="height: 220px;">
+        </div>
+
+        <span class="slide-number">11</span>
+    </div>
+
+    <!-- SLIDE 12: The Ask -->
+    <div class="slide">
+        <span class="section-label">The Ask</span>
+        <h2>Investment Summary</h2>
+        <p class="subtitle">Two investor slots. Land-backed. 99-year lease model. Clear returns.</p>
+
+        <div class="two-col" style="margin-bottom: 40px;">
+            <div class="investment-card featured">
+                <div class="header">
+                    <h3>Investor 1: ₹1 Crore (Immediate)</h3>
+                    <div class="status">OPEN NOW</div>
+                </div>
+                <div class="body">
+                    <ul class="benefits">
+                        <li><span class="check">&#10003;</span> 25% Land (16 Kathas)</li>
+                        <li><span class="check">&#10003;</span> 25% Company Equity</li>
+                        <li><span class="check">&#10003;</span> ₹2.5 Crores projected return</li>
+                        <li><span class="check">&#10003;</span> <strong>2.5x multiple in 18-24 months</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="investment-card">
+                <div class="header">
+                    <h3>Investor 2: ₹1.5 Crores (Phase 2)</h3>
+                    <div class="status">OPEN</div>
+                </div>
+                <div class="body">
+                    <ul class="benefits">
+                        <li><span class="check">&#10003;</span> 25% Land (16 Kathas)</li>
+                        <li><span class="check">&#10003;</span> 25% Company Equity</li>
+                        <li><span class="check">&#10003;</span> ₹2.5 Crores projected return</li>
+                        <li><span class="check">&#10003;</span> <strong>1.67x multiple in 18-24 months</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>All Units on 99-Year Long-Term Lease</h3>
+            <p>This is not a sale model. Units are offered on 99-year lease terms, providing long-term revenue stability and asset retention.</p>
+        </div>
+
+        <table class="data-table" style="margin-top: 30px;">
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Details</th>
+                    <th>Financial</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Project</td>
+                    <td class="amount">Ranga Matti (Red Soil)</td>
+                    <td>Gross Revenue</td>
+                    <td class="amount">₹25 Crores</td>
+                </tr>
+                <tr>
+                    <td>Location</td>
+                    <td>Uluberia &mdash; Ganga Frontage</td>
+                    <td>Total Cost</td>
+                    <td class="amount">₹15 Crores</td>
+                </tr>
+                <tr>
+                    <td>Total Land</td>
+                    <td class="amount">~64 Kathas</td>
+                    <td>Net Surplus</td>
+                    <td class="amount">₹10 Crores (40%)</td>
+                </tr>
+                <tr>
+                    <td>Total Units</td>
+                    <td class="amount">50 Units</td>
+                    <td>Investor 1 Ask</td>
+                    <td class="amount">₹1 Cr for 25%</td>
+                </tr>
+                <tr>
+                    <td>Unit Lease Price</td>
+                    <td class="amount">₹50 Lakhs</td>
+                    <td>Investor 2 Ask</td>
+                    <td class="amount">₹1.5 Cr for 25%</td>
+                </tr>
+                <tr>
+                    <td>Built-up Area</td>
+                    <td class="amount">50,000 sq. ft.</td>
+                    <td>Timeline</td>
+                    <td>18-24 months</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <span class="slide-number">12</span>
+    </div>
+
+    <!-- SLIDE 13: Next Steps / CTA -->
+    <div class="slide cta-slide">
+        <span class="section-label" style="background: rgba(255,255,255,0.2);">Next Steps</span>
+        <h2>Partner with Ranga Matti</h2>
+        <p class="subtitle">A biophilic senior living community on the Ganga. 99-year lease model. Land-backed. Proven promoter.</p>
+
+        <div class="cta-steps">
+            <div class="cta-step">
+                <div class="num">1</div>
+                <span>Review This Deck</span>
+            </div>
+            <div class="cta-step">
+                <div class="num">2</div>
+                <span>Site Visit to Uluberia</span>
+            </div>
+            <div class="cta-step">
+                <div class="num">3</div>
+                <span>Due Diligence</span>
+            </div>
+            <div class="cta-step">
+                <div class="num">4</div>
+                <span>Term Sheet</span>
+            </div>
+            <div class="cta-step">
+                <div class="num">5</div>
+                <span>Investment & Partnership</span>
+            </div>
+        </div>
+
+        <div style="margin-top: 60px;">
+            <p style="font-size: 1.3em; font-weight: 600;">KarmYog for 21st Century</p>
+            <p style="margin-top: 10px; opacity: 0.85;">Ranga Matti (Red Soil) | Uluberia, West Bengal | Direct Ganga Frontage</p>
+            <p style="margin-top: 5px; opacity: 0.7;">Seed Round Open &mdash; ₹2.5 Crores</p>
+        </div>
+
+        <div class="image-strip" style="margin-top: 40px;">
+            <div class="image-panel">
+                <img src="https://drive.google.com/thumbnail?id=1vVgRD675S_288w7bnkGNe8syGAchukMR&sz=w1200" alt="Temple Detail">
+            </div>
+            <div class="image-panel">
+                <img src="https://drive.google.com/thumbnail?id=1b8gVq_t3S1r7X0S5AyN9QkzvQSzH6idw&sz=w1200" alt="Panoramic View">
+            </div>
+            <div class="image-panel">
+                <img src="https://drive.google.com/thumbnail?id=1QKBtOJMUaeEkJkQIEgoa2l_HTKyPF1B4&sz=w1200" alt="Meditation Deck">
+            </div>
+        </div>
+
+        <div style="margin-top: 40px; opacity: 0.6; font-size: 0.85em;">
+            <p>Confidential &mdash; For Intended Recipients Only | January 2026</p>
+        </div>
+
+        <span class="slide-number" style="color: rgba(255,255,255,0.5);">13</span>
+    </div>
+
+</body>
+</html>
