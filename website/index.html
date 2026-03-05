@@ -14,12 +14,13 @@
 
     <style>
         :root {
-            --green-dark: #1a472a;
-            --green-mid: #2d5a27;
-            --green-light: #4a8b3f;
-            --green-pale: #e8f5e9;
+            --green-dark: #2E7D4F;
+            --green-mid: #43A06B;
+            --green-light: #6BBF8A;
+            --green-pale: #E8F8ED;
+            --green-mist: #F2FBF5;
             --gold: #c9a227;
-            --cream: #faf8f5;
+            --cream: #F7FCF8;
             --text: #2d3436;
             --text-light: #636e72;
         }
@@ -831,6 +832,97 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
+        /* Resource Hub */
+        .resource-hub {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .resource-card {
+            background: var(--green-mist);
+            border-radius: 16px;
+            padding: 35px 30px;
+            border: 1px solid #d4edda;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(46,125,79,0.12);
+        }
+
+        .resource-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+        }
+
+        .resource-card h3 {
+            font-size: 1.3em;
+            color: var(--green-dark);
+            margin-bottom: 10px;
+        }
+
+        .resource-card p {
+            font-size: 0.92em;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .resource-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .resource-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.88em;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .resource-btn.primary {
+            background: var(--green-dark);
+            color: white;
+        }
+
+        .resource-btn.primary:hover {
+            background: var(--green-mid);
+            transform: translateY(-2px);
+        }
+
+        .resource-btn.secondary {
+            background: white;
+            color: var(--green-dark);
+            border: 1.5px solid var(--green-dark);
+        }
+
+        .resource-btn.secondary:hover {
+            background: var(--green-pale);
+            transform: translateY(-2px);
+        }
+
         /* CTA Section */
         .cta-section {
             position: relative;
@@ -1056,7 +1148,7 @@
 
         /* Footer */
         footer {
-            background: #0d2818;
+            background: #1E5E3A;
             color: white;
             padding: 60px 0 30px;
         }
@@ -1261,6 +1353,7 @@
             <li><a href="#senior-living">Senior Living</a></li>
             <li><a href="#school">Green School</a></li>
             <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#resources">Resources</a></li>
             <li><a href="#booking" class="nav-cta">Book Now</a></li>
         </ul>
         <button class="mobile-menu-btn">
@@ -1306,7 +1399,7 @@
     </section>
 
     <!-- The Integral Essence Section -->
-    <section style="padding: 100px 0; background: linear-gradient(135deg, #1a472a 0%, #2d5a27 100%); color: white;" id="essence">
+    <section style="padding: 100px 0; background: linear-gradient(135deg, #2E7D4F 0%, #43A06B 100%); color: white;" id="essence">
         <div class="container">
             <div class="section-header">
                 <span class="section-label" style="background: rgba(255,255,255,0.2); color: white;">The Integral Essence</span>
@@ -1658,7 +1751,7 @@
     </section>
 
     <!-- Track Record Section -->
-    <section style="padding: 100px 0; background: linear-gradient(135deg, #f0f9f0 0%, #e8f5e9 100%);">
+    <section style="padding: 100px 0; background: linear-gradient(135deg, #F2FBF5 0%, #E8F8ED 100%);">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Proven Track Record</span>
@@ -1730,6 +1823,66 @@
                     <h3 style="margin-top: 20px; font-size: 1.4em; color: var(--green-dark);">Mr. Ram Badrinathan</h3>
                     <p style="color: var(--gold); font-weight: 600; margin: 8px 0;">Co-Founder, AI & Strategy</p>
                     <p style="font-size: 0.9em; color: var(--text-light);">15+ Years in Digital Strategy, Analytics & AI</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resource Hub -->
+    <section class="resource-hub" id="resources">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Resource Hub</span>
+                <h2>Documents & Downloads</h2>
+                <p>Everything you need to evaluate the RangaMati Vatika opportunity</p>
+            </div>
+
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">📊</div>
+                    <h3>Investor Summary</h3>
+                    <p>A 2-page overview of the project — key metrics, community composition, financial summary, investment structure, and returns. Print-ready A4.</p>
+                    <div class="resource-links">
+                        <a href="/investor-summary" target="_blank" class="resource-btn primary">View Online</a>
+                        <a href="/investor-summary" target="_blank" class="resource-btn secondary" onclick="setTimeout(()=>window.open('/investor-summary').print(),500);return false;">Save as PDF</a>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">📜</div>
+                    <h3>Investment Agreement</h3>
+                    <p>Template legal agreement covering investment terms, land allocation, unit allocation, equity participation, returns, and exit mechanism.</p>
+                    <div class="resource-links">
+                        <a href="/investment-agreement" target="_blank" class="resource-btn primary">View Online</a>
+                        <a href="/investment-agreement" target="_blank" class="resource-btn secondary" onclick="setTimeout(()=>window.open('/investment-agreement').print(),500);return false;">Save as PDF</a>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">📑</div>
+                    <h3>Full Investor Deck</h3>
+                    <p>Comprehensive 12-slide presentation — vision, market opportunity, financials, team, and detailed project timeline.</p>
+                    <div class="resource-links">
+                        <a href="/investor-deck" target="_blank" class="resource-btn primary">View Deck</a>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">🤝</div>
+                    <h3>Partner Prospectus</h3>
+                    <p>For potential operating partners — school operators, senior care providers, and hospitality brands interested in collaboration.</p>
+                    <div class="resource-links">
+                        <a href="/partner-prospectus" target="_blank" class="resource-btn primary">View Prospectus</a>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">🏡</div>
+                    <h3>Project Brochure</h3>
+                    <p>Visual overview of RangaMati Vatika — lifestyle, amenities, Ganga frontage, unit layouts, and community design.</p>
+                    <div class="resource-links">
+                        <a href="/brochure" target="_blank" class="resource-btn primary">View Brochure</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1860,6 +2013,7 @@
                         <li><a href="#school">Green School</a></li>
                         <li><a href="#features">Biophilic Design</a></li>
                         <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#resources">Resources</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

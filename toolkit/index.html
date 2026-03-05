@@ -9,13 +9,13 @@
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700;900&display=swap');
 
   :root {
-    --rose: #8B2252;
-    --rose-light: #C4547A;
-    --blush: #FFF0F3;
-    --blush-deep: #FFE0E6;
-    --pink-border: #F5C6D0;
-    --cream: #FFFAF5;
-    --warm-white: #FEFCFB;
+    --rose: #2D5A3D;
+    --rose-light: #4A8B5E;
+    --blush: #EFF8F1;
+    --blush-deep: #D9EEDC;
+    --pink-border: #B8D4BE;
+    --cream: #FAFBF7;
+    --warm-white: #FCFDF9;
     --charcoal: #2D2D2D;
     --dark: #1A1A1A;
     --slate: #555555;
@@ -85,7 +85,7 @@
   .sidebar nav a:hover,
   .sidebar nav a.active {
     color: var(--rose);
-    background: rgba(139,34,82,0.06);
+    background: rgba(45,90,61,0.06);
     border-left-color: var(--rose);
   }
   .sidebar nav a .num {
@@ -240,7 +240,7 @@
     transition: all 0.2s;
   }
   .resource-card:hover {
-    box-shadow: 0 6px 20px rgba(139,34,82,0.08);
+    box-shadow: 0 6px 20px rgba(45,90,61,0.08);
     transform: translateY(-2px);
   }
   .resource-card .rc-icon {
@@ -252,10 +252,10 @@
     font-size: 22px;
     margin-bottom: 14px;
   }
-  .resource-card .rc-icon.pdf { background: #FFE0E6; }
+  .resource-card .rc-icon.pdf { background: #E0F0E4; }
   .resource-card .rc-icon.sheet { background: #E8F5E9; }
   .resource-card .rc-icon.doc { background: #E3F2FD; }
-  .resource-card .rc-icon.image { background: #FFF0F3; }
+  .resource-card .rc-icon.image { background: #F0F8F0; }
   .resource-card .rc-icon.web { background: #FFF3E0; }
   .resource-card h4 {
     font-family: 'Cormorant Garamond', serif;
@@ -301,7 +301,7 @@
   /* CARD GRID */
   .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0; }
   .card { border: 1px solid var(--pink-border); border-radius: 12px; padding: 28px; background: var(--warm-white); }
-  .card:hover { box-shadow: 0 4px 16px rgba(139,34,82,0.06); }
+  .card:hover { box-shadow: 0 4px 16px rgba(45,90,61,0.06); }
   .card .label { font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; color: var(--rose); margin-bottom: 8px; }
   .card h4 { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--charcoal); margin: 0 0 12px; text-transform: none; letter-spacing: 0; }
   .card ul { padding-left: 20px; margin: 10px 0; }
@@ -392,7 +392,7 @@
 
   /* HIGHLIGHT BOXES */
   .highlight-box { border-radius: 12px; padding: 22px 26px; margin: 18px 0; font-size: 17px; }
-  .highlight-box.warning { background: #FFF5F5; border-left: 4px solid var(--rose); }
+  .highlight-box.warning { background: #F5FFF5; border-left: 4px solid var(--rose); }
   .highlight-box.success { background: #F0FAF0; border-left: 4px solid var(--success); }
   .highlight-box.info { background: var(--blush); border-left: 4px solid var(--rose-light); }
   .highlight-box.gold { background: var(--gold-light); border-left: 4px solid var(--gold); }
@@ -450,7 +450,7 @@
     transition: transform 0.2s, box-shadow 0.2s;
     text-align: center;
   }
-  .team-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(139,34,82,0.12); }
+  .team-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(45,90,61,0.12); }
   .team-card img { width: 100%; aspect-ratio: 1; object-fit: cover; border: none; }
   .team-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--charcoal); padding: 14px 16px 2px; }
   .team-role { font-size: 14px; color: var(--slate); padding: 0 16px 18px; }
@@ -609,6 +609,44 @@
       <span class="rc-status ready">Ready</span>
       <div class="rc-actions">
         <a class="rc-btn primary" href="https://drive.google.com/file/d/126NXdH4ek4q_9eDRINDlNbpK8HCPGi1S/view" target="_blank">&#128200; Open Plan</a>
+      </div>
+    </div>
+
+    <div class="resource-card">
+      <div class="rc-icon pdf">&#128202;</div>
+      <h4>Investor 2-Page Summary</h4>
+      <p class="rc-desc">Crisp A4 teaser &mdash; key metrics, community composition, financial summary, investment structure, and projected returns.</p>
+      <span class="rc-format">HTML + PDF</span>
+      <span class="rc-status ready">Ready</span>
+      <div class="rc-actions">
+        <a class="rc-btn primary" href="/investor-summary" target="_blank">&#127760; View Online</a>
+        <a class="rc-btn secondary" href="/investor-summary" target="_blank" onclick="var w=window.open('/investor-summary');setTimeout(function(){w.print()},800);return false;">&#128196; PDF</a>
+      </div>
+    </div>
+
+    <div class="resource-card">
+      <div class="rc-icon doc">&#128220;</div>
+      <h4>Investment Agreement</h4>
+      <p class="rc-desc">Template legal agreement &mdash; investment terms, land &amp; unit allocation, equity, returns, exit mechanism. Fillable blanks.</p>
+      <span class="rc-format">HTML + PDF</span>
+      <span class="rc-status ready">Ready</span>
+      <div class="rc-actions">
+        <a class="rc-btn primary" href="/investment-agreement" target="_blank">&#127760; View Online</a>
+        <a class="rc-btn secondary" href="/investment-agreement" target="_blank" onclick="var w=window.open('/investment-agreement');setTimeout(function(){w.print()},800);return false;">&#128196; PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <h3>Sprint &amp; Tracking</h3>
+  <div class="resource-grid">
+    <div class="resource-card">
+      <div class="rc-icon web" style="background:#EFF8F1;">&#127942;</div>
+      <h4>30-Day Investor Sprint</h4>
+      <p class="rc-desc">Live sprint tracker &mdash; 4-week plan to secure the first &#8377;1 Cr investor. Track tasks, notes, and progress.</p>
+      <span class="rc-format">WEB APP</span>
+      <span class="rc-status ready">Ready</span>
+      <div class="rc-actions">
+        <a class="rc-btn primary" href="/sprint/" target="_blank">&#127942; Open Sprint</a>
       </div>
     </div>
   </div>

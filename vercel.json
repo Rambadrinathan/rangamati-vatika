@@ -2,9 +2,12 @@
   "rewrites": [
     { "source": "/", "destination": "/toolkit/index.html" },
     { "source": "/investor-deck", "destination": "/investor-deck/index.html" },
+    { "source": "/investor-summary", "destination": "/investor-deck/investor-summary.html" },
+    { "source": "/investment-agreement", "destination": "/investor-deck/investment-agreement.html" },
     { "source": "/brochure", "destination": "/brochure/index.html" },
     { "source": "/partner-prospectus", "destination": "/partner-prospectus/index.html" },
-    { "source": "/website", "destination": "/website/index.html" }
+    { "source": "/website", "destination": "/website/index.html" },
+    { "source": "/sprint", "destination": "/sprint/index.html" }
   ],
   "headers": [
     {

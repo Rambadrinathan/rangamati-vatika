@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RangaMati Vatika — Investment Agreement</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+        @page {
+            size: A4;
+            margin: 25mm 22mm 25mm 22mm;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #1a365d;
+            --text-dark: #1a202c;
+            --text-muted: #4a5568;
+            --border: #cbd5e0;
+            --accent: #c69c6d;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            font-size: 11.5px;
+            line-height: 1.7;
+            background: white;
+        }
+
+        .document {
+            width: 210mm;
+            margin: 0 auto;
+            padding: 25mm 22mm;
+            background: white;
+        }
+
+        .doc-header {
+            text-align: center;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+            border-bottom: 3px double var(--primary);
+        }
+
+        .doc-header h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .doc-header .doc-subtitle {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .doc-header .doc-project {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-top: 6px;
+        }
+
+        .disclaimer {
+            background: #fff8e1;
+            border: 1px solid #ffe082;
+            border-radius: 6px;
+            padding: 12px 16px;
+            margin-bottom: 25px;
+            font-size: 10px;
+            color: #6d4c00;
+            line-height: 1.6;
+        }
+
+        .disclaimer strong {
+            display: block;
+            margin-bottom: 3px;
+            font-size: 10.5px;
+        }
+
+        .section {
+            margin-bottom: 22px;
+            page-break-inside: avoid;
+        }
+
+        .section-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .clause {
+            margin-bottom: 10px;
+            padding-left: 22px;
+            position: relative;
+        }
+
+        .clause-num {
+            position: absolute;
+            left: 0;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 11px;
+        }
+
+        .sub-clause {
+            margin-left: 20px;
+            margin-bottom: 6px;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .sub-clause::before {
+            content: attr(data-num);
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+            font-size: 10.5px;
+        }
+
+        .blank {
+            display: inline-block;
+            min-width: 180px;
+            border-bottom: 1px solid var(--text-dark);
+            padding: 0 4px;
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 10.5px;
+        }
+
+        .blank-short {
+            min-width: 100px;
+        }
+
+        .blank-date {
+            min-width: 140px;
+        }
+
+        .blank-amount {
+            min-width: 120px;
+        }
+
+        .definition {
+            margin-bottom: 8px;
+            padding-left: 22px;
+        }
+
+        .definition strong {
+            color: var(--primary);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 11px;
+        }
+
+        .data-table th {
+            background: var(--primary);
+            color: white;
+            padding: 8px 12px;
+            text-align: left;
+            font-weight: 500;
+            font-size: 10.5px;
+        }
+
+        .data-table td {
+            padding: 7px 12px;
+            border-bottom: 1px solid #edf2f7;
+        }
+
+        .data-table .amount {
+            text-align: right;
+            font-weight: 600;
+        }
+
+        .signature-block {
+            margin-top: 40px;
+            page-break-inside: avoid;
+        }
+
+        .sig-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .sig-party {
+            padding-top: 10px;
+        }
+
+        .sig-party h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .sig-line {
+            margin-bottom: 18px;
+        }
+
+        .sig-line .line {
+            border-bottom: 1px solid var(--text-dark);
+            height: 30px;
+            margin-bottom: 4px;
+        }
+
+        .sig-line .label {
+            font-size: 10px;
+            color: var(--text-muted);
+        }
+
+        .witnesses {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .witnesses h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 13px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .witness-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .annexure {
+            page-break-before: always;
+            margin-top: 0;
+        }
+
+        .annexure-header {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+
+        @media print {
+            body { background: white; }
+            .document { padding: 0; box-shadow: none; margin: 0; }
+        }
+
+        @media screen {
+            body { background: #e2e8f0; }
+            .document {
+                box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="document">
+
+    <!-- HEADER -->
+    <div class="doc-header">
+        <h1>Investment Agreement</h1>
+        <div class="doc-subtitle">Private & Confidential</div>
+        <div class="doc-project">RangaMati Vatika — Intergenerational Community Project</div>
+    </div>
+
+    <!-- DISCLAIMER -->
+    <div class="disclaimer">
+        <strong>IMPORTANT NOTICE</strong>
+        This document is a template investment agreement prepared for discussion purposes. It does not constitute legal advice
+        and should not be treated as a final, binding legal instrument without independent review by qualified legal counsel
+        representing each party. All terms are subject to negotiation and mutual agreement.
+    </div>
+
+    <!-- 1. PREAMBLE -->
+    <div class="section">
+        <div class="section-number">1. PREAMBLE</div>
+        <div class="clause">
+            <span class="clause-num">1.1</span>
+            This Investment Agreement ("Agreement") is entered into on this <span class="blank blank-date">[Date]</span>,
+            at Kolkata, West Bengal, India.
+        </div>
+        <div class="clause">
+            <span class="clause-num">1.2</span>
+            <strong>BETWEEN:</strong>
+        </div>
+        <div class="clause" style="padding-left: 40px;">
+            <strong>THE PROMOTER:</strong><br>
+            <strong>KarmYog for 21st Century Foundation</strong>, a Section 8 Company registered under the Companies Act, 2013,
+            having its registered office at IIT Kharagpur Research Park, West Bengal, India,
+            represented by its Founder & Director, Mr. Ram Badrinathan
+            (hereinafter referred to as the <strong>"Promoter"</strong>, which expression shall include its successors and assigns);
+        </div>
+        <div class="clause" style="padding-left: 40px;">
+            <strong>AND</strong>
+        </div>
+        <div class="clause" style="padding-left: 40px;">
+            <strong>THE INVESTOR:</strong><br>
+            <span class="blank">[Investor Full Legal Name]</span>,
+            PAN: <span class="blank blank-short">[PAN Number]</span>,
+            Aadhaar: <span class="blank blank-short">[Aadhaar Number]</span>,
+            residing at <span class="blank">[Full Address]</span>
+            (hereinafter referred to as the <strong>"Investor"</strong>, which expression shall include their heirs, executors, and assigns).
+        </div>
+        <div class="clause">
+            <span class="clause-num">1.3</span>
+            The Promoter and the Investor are hereinafter collectively referred to as the <strong>"Parties"</strong> and individually as a <strong>"Party"</strong>.
+        </div>
+    </div>
+
+    <!-- 2. RECITALS -->
+    <div class="section">
+        <div class="section-number">2. RECITALS</div>
+        <div class="clause">
+            <span class="clause-num">2.1</span>
+            <strong>WHEREAS</strong>, the Promoter has acquired approximately 97 Kathas (~1.6 acres) of land with direct
+            Ganga frontage at Uluberia, Howrah District, West Bengal (the "Land"), for the purpose of developing an
+            intergenerational community project known as <strong>"RangaMati Vatika"</strong> (the "Project").
+        </div>
+        <div class="clause">
+            <span class="clause-num">2.2</span>
+            <strong>WHEREAS</strong>, the Project envisages the construction of 75 residential and community units of approximately
+            1,000 sq.ft. each, comprising 30 school campus units, 30 senior living units, and 15 eco-retreat units,
+            to be offered on 99-year lease terms at a premium of ₹40,00,000 (Rupees Forty Lakhs) per unit.
+        </div>
+        <div class="clause">
+            <span class="clause-num">2.3</span>
+            <strong>WHEREAS</strong>, the Promoter has completed the Bhoomi Puja for the Project and now seeks investment
+            of ₹2,50,00,000 (Rupees Two Crores Fifty Lakhs) in two phases for land registration, approvals,
+            infrastructure development, and construction.
+        </div>
+        <div class="clause">
+            <span class="clause-num">2.4</span>
+            <strong>WHEREAS</strong>, the Investor, having conducted due diligence on the Project and the Promoter's track record,
+            wishes to invest in the Project on the terms and conditions set forth herein.
+        </div>
+    </div>
+
+    <!-- 3. DEFINITIONS -->
+    <div class="section">
+        <div class="section-number">3. DEFINITIONS</div>
+        <div class="definition"><strong>"Project"</strong> means RangaMati Vatika, the intergenerational community development at Uluberia, Howrah, West Bengal.</div>
+        <div class="definition"><strong>"Land"</strong> means the approximately 97 Kathas (~1.6 acres) of land with Ganga frontage at the Project site, as detailed in Annexure A.</div>
+        <div class="definition"><strong>"Unit"</strong> means an individual residential or community unit of approximately 1,000 sq.ft. built-up area within the Project.</div>
+        <div class="definition"><strong>"Lease Premium"</strong> means ₹40,00,000 (Rupees Forty Lakhs) per Unit, payable by end-lessees under 99-year lease terms.</div>
+        <div class="definition"><strong>"Phase 1 Investment"</strong> means ₹1,00,00,000 (Rupees One Crore) invested for land registration, approvals, and initial infrastructure.</div>
+        <div class="definition"><strong>"Phase 2 Investment"</strong> means ₹1,50,00,000 (Rupees One Crore Fifty Lakhs) invested for construction and completion.</div>
+        <div class="definition"><strong>"Surplus"</strong> means the net amount remaining after deducting all Project costs from total revenue, estimated at ₹8,00,00,000 (Rupees Eight Crores).</div>
+        <div class="definition"><strong>"Completion"</strong> means the date on which all 75 Units have received occupancy certificates or equivalent local approvals.</div>
+        <div class="definition"><strong>"SPV"</strong> means Special Purpose Vehicle, if formed for the Project under the Companies Act, 2013.</div>
+    </div>
+
+    <!-- 4. INVESTMENT AMOUNT & SCHEDULE -->
+    <div class="section page-break">
+        <div class="section-number">4. INVESTMENT AMOUNT & SCHEDULE</div>
+        <div class="clause">
+            <span class="clause-num">4.1</span>
+            The Investor agrees to invest a total sum of <span class="blank blank-amount">₹1,00,00,000</span>
+            (Rupees <span class="blank">[Amount in Words]</span>) in the Project, as per the following schedule:
+        </div>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Tranche</th>
+                    <th>Description</th>
+                    <th>Amount (₹)</th>
+                    <th>Due Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1st Tranche</td>
+                    <td>Upon execution of this Agreement</td>
+                    <td class="amount"><span class="blank blank-amount">[Amount]</span></td>
+                    <td><span class="blank blank-date">[Date]</span></td>
+                </tr>
+                <tr>
+                    <td>2nd Tranche</td>
+                    <td>Upon completion of land registration</td>
+                    <td class="amount"><span class="blank blank-amount">[Amount]</span></td>
+                    <td><span class="blank blank-date">[Date]</span></td>
+                </tr>
+                <tr>
+                    <td>3rd Tranche</td>
+                    <td>Upon commencement of construction</td>
+                    <td class="amount"><span class="blank blank-amount">[Amount]</span></td>
+                    <td><span class="blank blank-date">[Date]</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="clause">
+            <span class="clause-num">4.2</span>
+            All payments shall be made by NEFT/RTGS/cheque to the Project's designated bank account, details of which
+            shall be provided by the Promoter upon execution of this Agreement.
+        </div>
+        <div class="clause">
+            <span class="clause-num">4.3</span>
+            The Promoter shall issue a duly stamped receipt for each tranche payment within 7 (seven) business days of receipt.
+        </div>
+    </div>
+
+    <!-- 5. LAND ALLOCATION -->
+    <div class="section">
+        <div class="section-number">5. LAND ALLOCATION</div>
+        <div class="clause">
+            <span class="clause-num">5.1</span>
+            In consideration of the Phase 1 Investment, the Promoter shall transfer a <strong>25% (twenty-five percent) undivided share</strong>
+            of the Land to the Investor. The land split shall be: 50% Promoter, 25% Investor 1, 25% Investor 2.
+        </div>
+        <div class="clause">
+            <span class="clause-num">5.2</span>
+            The registration of the Investor's land share shall be completed within 60 (sixty) days of receipt of the
+            Phase 1 Investment, at the applicable Sub-Registrar's office in Howrah District.
+        </div>
+        <div class="clause">
+            <span class="clause-num">5.3</span>
+            All stamp duty, registration charges, and associated government fees for the Investor's land share shall be
+            borne by the <span class="blank blank-short">[Promoter/Investor]</span>.
+        </div>
+        <div class="clause">
+            <span class="clause-num">5.4</span>
+            The Promoter represents and warrants that the Land has a clear and marketable title, free from all encumbrances,
+            liens, charges, and disputes, as evidenced by the title documents listed in Annexure A.
+        </div>
+    </div>
+
+    <!-- 6. UNIT ALLOCATION -->
+    <div class="section">
+        <div class="section-number">6. UNIT ALLOCATION</div>
+        <div class="clause">
+            <span class="clause-num">6.1</span>
+            The Investor shall be allocated <strong>12 (twelve) Units</strong> from the total 75 Units in the Project.
+        </div>
+        <div class="clause">
+            <span class="clause-num">6.2</span>
+            The Investor shall have the right to select their 12 Units from the master plan, with selection priority
+            based on the order of investment commitment. Selection must be completed within 30 (thirty) days of
+            master plan approval.
+        </div>
+        <div class="clause">
+            <span class="clause-num">6.3</span>
+            Each allocated Unit shall be offered to end-lessees on 99-year lease terms at a premium of ₹40,00,000 per Unit,
+            with the Investor receiving the full lease premium for their allocated Units.
+        </div>
+        <div class="clause">
+            <span class="clause-num">6.4</span>
+            The Investor may, at their sole discretion, retain any or all allocated Units for personal use,
+            lease them to third parties, or request the Promoter to market them on their behalf.
+        </div>
+    </div>
+
+    <!-- 7. EQUITY PARTICIPATION -->
+    <div class="section">
+        <div class="section-number">7. EQUITY PARTICIPATION</div>
+        <div class="clause">
+            <span class="clause-num">7.1</span>
+            In addition to the land and unit allocation, the Phase 1 Investor shall hold a <strong>25% (twenty-five percent) equity stake</strong>
+            in the Project SPV, if constituted, or an equivalent profit-sharing arrangement.
+        </div>
+        <div class="clause">
+            <span class="clause-num">7.2</span>
+            The equity participation entitles the Investor to 25% of all Project surplus beyond the direct unit revenues,
+            including but not limited to: community fees, common area revenues, and any appreciation in land value.
+        </div>
+        <div class="clause">
+            <span class="clause-num">7.3</span>
+            The Promoter shall maintain a separate Project account and provide quarterly financial statements
+            to all equity holders.
+        </div>
+    </div>
+
+    <!-- 8. RETURNS & EXIT -->
+    <div class="section page-break">
+        <div class="section-number">8. RETURNS & EXIT</div>
+        <div class="clause">
+            <span class="clause-num">8.1</span>
+            <strong>Phase 1 Investment Returns:</strong> The Promoter projects a return of <strong>2.0x</strong> (two times)
+            the Phase 1 Investment of ₹1,00,00,000, generating ₹2,00,00,000 through a combination of unit lease premiums
+            and equity participation.
+        </div>
+        <div class="clause">
+            <span class="clause-num">8.2</span>
+            <strong>Phase 2 Investment Returns:</strong> The projected return on Phase 2 Investment of ₹1,50,00,000 is
+            <strong>1.33x</strong> (one point three three times), generating ₹2,00,00,000.
+        </div>
+        <div class="clause">
+            <span class="clause-num">8.3</span>
+            Returns shall be distributed as Units are leased and payments are received from end-lessees.
+            The Promoter shall distribute the Investor's share within 15 (fifteen) days of each lease premium receipt.
+        </div>
+        <div class="clause">
+            <span class="clause-num">8.4</span>
+            <strong>Exit Mechanism:</strong> The Investor may exit the Project at any time after the 12-month lock-in period by:
+        </div>
+        <div class="sub-clause" data-num="(a)">Selling their land share and/or unit allocation to a third party (with Promoter's right of first refusal);</div>
+        <div class="sub-clause" data-num="(b)">Selling their equity stake to the Promoter or another investor at fair market value;</div>
+        <div class="sub-clause" data-num="(c)">Mutual buy-out at a price determined by an independent valuer agreed by both Parties.</div>
+    </div>
+
+    <!-- 9. PROMOTER OBLIGATIONS -->
+    <div class="section">
+        <div class="section-number">9. PROMOTER OBLIGATIONS</div>
+        <div class="clause">
+            <span class="clause-num">9.1</span>
+            The Promoter shall complete the Project within <strong>18 (eighteen) months</strong> from the date of receipt
+            of the Phase 1 Investment, subject to force majeure events.
+        </div>
+        <div class="clause">
+            <span class="clause-num">9.2</span>
+            The Promoter shall obtain all necessary governmental approvals, permits, and licenses required for
+            the development and operation of the Project.
+        </div>
+        <div class="clause">
+            <span class="clause-num">9.3</span>
+            The Promoter shall ensure construction quality meets or exceeds applicable BIS standards and local
+            building code requirements.
+        </div>
+        <div class="clause">
+            <span class="clause-num">9.4</span>
+            The Promoter shall provide the Investor with:
+        </div>
+        <div class="sub-clause" data-num="(a)">Monthly construction progress reports with photographs;</div>
+        <div class="sub-clause" data-num="(b)">Quarterly financial statements of the Project account;</div>
+        <div class="sub-clause" data-num="(c)">Immediate notification of any material adverse change or regulatory issue;</div>
+        <div class="sub-clause" data-num="(d)">Access to the Project site for inspection upon 24 hours' prior notice.</div>
+    </div>
+
+    <!-- 10. INVESTOR RIGHTS -->
+    <div class="section">
+        <div class="section-number">10. INVESTOR RIGHTS</div>
+        <div class="clause">
+            <span class="clause-num">10.1</span>
+            <strong>Information Rights:</strong> The Investor shall have the right to inspect all Project-related books,
+            records, and accounts, upon reasonable notice.
+        </div>
+        <div class="clause">
+            <span class="clause-num">10.2</span>
+            <strong>Site Access:</strong> The Investor shall have the right to visit the Project site at any time
+            during normal business hours, with prior intimation.
+        </div>
+        <div class="clause">
+            <span class="clause-num">10.3</span>
+            <strong>Audit Rights:</strong> The Investor may appoint an independent auditor to audit Project finances
+            once per financial year, at the Investor's cost.
+        </div>
+        <div class="clause">
+            <span class="clause-num">10.4</span>
+            <strong>Board/Advisory Seat:</strong> The Phase 1 Investor shall be entitled to a seat on the Project
+            advisory board (or Board of Directors if an SPV is formed).
+        </div>
+        <div class="clause">
+            <span class="clause-num">10.5</span>
+            <strong>Consent Rights:</strong> The following actions shall require the Investor's prior written consent:
+        </div>
+        <div class="sub-clause" data-num="(a)">Any change in the Project scope, design, or unit pricing;</div>
+        <div class="sub-clause" data-num="(b)">Borrowing exceeding ₹25,00,000 against the Project;</div>
+        <div class="sub-clause" data-num="(c)">Sale or encumbrance of Project land beyond allocated shares;</div>
+        <div class="sub-clause" data-num="(d)">Entry of additional investors or change in the equity structure.</div>
+    </div>
+
+    <!-- 11. REPRESENTATIONS & WARRANTIES -->
+    <div class="section">
+        <div class="section-number">11. REPRESENTATIONS & WARRANTIES</div>
+        <div class="clause">
+            <span class="clause-num">11.1</span>
+            <strong>By the Promoter:</strong>
+        </div>
+        <div class="sub-clause" data-num="(a)">The Promoter is duly organized and validly existing under the laws of India;</div>
+        <div class="sub-clause" data-num="(b)">The Promoter has full power and authority to enter into this Agreement;</div>
+        <div class="sub-clause" data-num="(c)">The Land has clear and marketable title, free from encumbrances;</div>
+        <div class="sub-clause" data-num="(d)">There is no pending or threatened litigation relating to the Land or the Project;</div>
+        <div class="sub-clause" data-num="(e)">All information provided to the Investor regarding the Project is true and complete;</div>
+        <div class="sub-clause" data-num="(f)">The Project does not violate any applicable law, regulation, or third-party rights.</div>
+
+        <div class="clause" style="margin-top: 12px;">
+            <span class="clause-num">11.2</span>
+            <strong>By the Investor:</strong>
+        </div>
+        <div class="sub-clause" data-num="(a)">The Investor has the legal capacity and financial ability to make the investment;</div>
+        <div class="sub-clause" data-num="(b)">The investment funds are from legitimate sources and comply with all applicable laws;</div>
+        <div class="sub-clause" data-num="(c)">The Investor has conducted independent due diligence and is making an informed investment decision;</div>
+        <div class="sub-clause" data-num="(d)">The Investor understands that projected returns are estimates and not guarantees.</div>
+    </div>
+
+    <!-- 12. DISPUTE RESOLUTION -->
+    <div class="section">
+        <div class="section-number">12. DISPUTE RESOLUTION</div>
+        <div class="clause">
+            <span class="clause-num">12.1</span>
+            The Parties shall first attempt to resolve any dispute arising out of or in connection with this Agreement
+            through good-faith negotiation within 30 (thirty) days of written notice of the dispute.
+        </div>
+        <div class="clause">
+            <span class="clause-num">12.2</span>
+            If the dispute is not resolved through negotiation, it shall be referred to and finally resolved by
+            <strong>arbitration</strong> under the Arbitration and Conciliation Act, 1996, as amended.
+        </div>
+        <div class="clause">
+            <span class="clause-num">12.3</span>
+            The arbitration shall be conducted by a sole arbitrator mutually agreed upon by the Parties. If the Parties
+            cannot agree on an arbitrator within 15 (fifteen) days, the arbitrator shall be appointed by the
+            High Court of Calcutta.
+        </div>
+        <div class="clause">
+            <span class="clause-num">12.4</span>
+            The seat and venue of arbitration shall be <strong>Kolkata, West Bengal, India</strong>.
+            The language of arbitration shall be English.
+        </div>
+        <div class="clause">
+            <span class="clause-num">12.5</span>
+            The courts of Kolkata shall have exclusive jurisdiction over any matters not subject to arbitration.
+        </div>
+    </div>
+
+    <!-- 13. CONFIDENTIALITY -->
+    <div class="section">
+        <div class="section-number">13. CONFIDENTIALITY</div>
+        <div class="clause">
+            <span class="clause-num">13.1</span>
+            Each Party agrees to maintain strict confidentiality regarding the terms of this Agreement,
+            all financial information, business plans, and proprietary information shared in connection with the Project.
+        </div>
+        <div class="clause">
+            <span class="clause-num">13.2</span>
+            This confidentiality obligation shall survive the termination of this Agreement for a period of
+            3 (three) years.
+        </div>
+        <div class="clause">
+            <span class="clause-num">13.3</span>
+            Notwithstanding the above, disclosure shall be permitted where required by law, regulation,
+            court order, or governmental authority, provided the disclosing Party gives prior written notice
+            to the other Party where legally permissible.
+        </div>
+    </div>
+
+    <!-- 14. GENERAL PROVISIONS -->
+    <div class="section page-break">
+        <div class="section-number">14. GENERAL PROVISIONS</div>
+        <div class="clause">
+            <span class="clause-num">14.1</span>
+            <strong>Governing Law:</strong> This Agreement shall be governed by and construed in accordance with
+            the laws of India, specifically the Indian Contract Act, 1872, and other applicable legislation.
+        </div>
+        <div class="clause">
+            <span class="clause-num">14.2</span>
+            <strong>Notices:</strong> All notices under this Agreement shall be in writing and sent by registered post,
+            courier, or email to the addresses specified herein, with copies to the respective legal counsel.
+        </div>
+        <div class="clause">
+            <span class="clause-num">14.3</span>
+            <strong>Amendments:</strong> No amendment or modification of this Agreement shall be valid unless made
+            in writing and signed by both Parties.
+        </div>
+        <div class="clause">
+            <span class="clause-num">14.4</span>
+            <strong>Entire Agreement:</strong> This Agreement, together with its Annexures, constitutes the entire
+            agreement between the Parties with respect to the subject matter hereof and supersedes all prior
+            negotiations, representations, and agreements.
+        </div>
+        <div class="clause">
+            <span class="clause-num">14.5</span>
+            <strong>Severability:</strong> If any provision of this Agreement is found to be invalid or unenforceable,
+            the remaining provisions shall continue in full force and effect.
+        </div>
+        <div class="clause">
+            <span class="clause-num">14.6</span>
+            <strong>Force Majeure:</strong> Neither Party shall be liable for delay or failure in performance caused
+            by events beyond reasonable control, including but not limited to natural disasters, wars, epidemics,
+            government actions, or regulatory changes.
+        </div>
+        <div class="clause">
+            <span class="clause-num">14.7</span>
+            <strong>Waiver:</strong> No failure or delay by either Party in exercising any right under this Agreement
+            shall constitute a waiver of that right.
+        </div>
+    </div>
+
+    <!-- 15. SIGNATURE BLOCKS -->
+    <div class="section signature-block">
+        <div class="section-number">15. EXECUTION</div>
+        <p style="margin-bottom: 15px;">
+            <strong>IN WITNESS WHEREOF</strong>, the Parties have executed this Agreement on the date first written above.
+        </p>
+
+        <div class="sig-grid">
+            <div class="sig-party">
+                <h4>The Promoter</h4>
+                <div class="sig-line">
+                    <div class="line"></div>
+                    <div class="label">Signature</div>
+                </div>
+                <div class="sig-line">
+                    <div class="line"></div>
+                    <div class="label">Name: Ram Badrinathan</div>
+                </div>
+                <div class="sig-line">
+                    <div class="line"></div>
+                    <div class="label">Designation: Founder & Director</div>
+                </div>
+                <div class="sig-line">
+                    <div class="line"></div>
+                    <div class="label">Date</div>
+                </div>
+            </div>
+
+            <div class="sig-party">
+                <h4>The Investor</h4>
+                <div class="sig-line">
+                    <div class="line"></div>
+                    <div class="label">Signature</div>
+                </div>
+                <div class="sig-line">
+                    <div class="line"></div>
+                    <div class="label">Name</div>
+                </div>
+                <div class="sig-line">
+                    <div class="line"></div>
+                    <div class="label">PAN</div>
+                </div>
+                <div class="sig-line">
+                    <div class="line"></div>
+                    <div class="label">Date</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="witnesses">
+            <h4>WITNESSES</h4>
+            <div class="witness-grid">
+                <div>
+                    <div class="sig-line">
+                        <div class="line"></div>
+                        <div class="label">Witness 1 — Signature</div>
+                    </div>
+                    <div class="sig-line">
+                        <div class="line"></div>
+                        <div class="label">Name & Address</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="sig-line">
+                        <div class="line"></div>
+                        <div class="label">Witness 2 — Signature</div>
+                    </div>
+                    <div class="sig-line">
+                        <div class="line"></div>
+                        <div class="label">Name & Address</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ANNEXURE A -->
+    <div class="section annexure">
+        <div class="annexure-header">ANNEXURE A — Land Schedule</div>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Particular</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Location</td><td>Uluberia, Howrah District, West Bengal</td></tr>
+                <tr><td>Total Area</td><td>97 Kathas (~1.6 Acres / ~6,475 sq.m. approx.)</td></tr>
+                <tr><td>Frontage</td><td>Direct Ganga (Hooghly) River Frontage</td></tr>
+                <tr><td>Survey/Plot No.</td><td><span class="blank">[To be filled]</span></td></tr>
+                <tr><td>Mouza/Village</td><td><span class="blank">[To be filled]</span></td></tr>
+                <tr><td>JL No.</td><td><span class="blank">[To be filled]</span></td></tr>
+                <tr><td>Current Classification</td><td><span class="blank">[Agricultural/Residential/Mixed]</span></td></tr>
+                <tr><td>Mutation Status</td><td><span class="blank">[Completed/Pending]</span></td></tr>
+                <tr><td>Encumbrances</td><td>Nil (as per title search dated <span class="blank blank-date">[Date]</span>)</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ANNEXURE B -->
+    <div class="section annexure">
+        <div class="annexure-header">ANNEXURE B — Unit Allocation</div>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Total Units</th>
+                    <th>Investor Allocation</th>
+                    <th>Lease Premium / Unit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>School Campus</td><td>30</td><td><span class="blank blank-short">[No.]</span></td><td class="amount">₹40,00,000</td></tr>
+                <tr><td>Senior Living</td><td>30</td><td><span class="blank blank-short">[No.]</span></td><td class="amount">₹40,00,000</td></tr>
+                <tr><td>Eco-Retreat</td><td>15</td><td><span class="blank blank-short">[No.]</span></td><td class="amount">₹40,00,000</td></tr>
+                <tr style="font-weight: 700; background: #ebf8ff;">
+                    <td>Total</td><td>75</td><td>12</td><td class="amount">₹4,80,00,000</td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="font-size: 10.5px; color: var(--text-muted); margin-top: 8px;">
+            Note: Specific unit numbers shall be selected by the Investor from the approved master plan within 30 days of plan approval.
+        </p>
+    </div>
+
+    <!-- ANNEXURE C -->
+    <div class="section annexure">
+        <div class="annexure-header">ANNEXURE C — Payment Schedule</div>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Tranche</th>
+                    <th>Milestone</th>
+                    <th>Amount (₹)</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1st</td>
+                    <td>Signing of Agreement</td>
+                    <td class="amount"><span class="blank blank-amount">[Amount]</span></td>
+                    <td><span class="blank blank-date">[Date]</span></td>
+                    <td>Pending</td>
+                </tr>
+                <tr>
+                    <td>2nd</td>
+                    <td>Land Registration Complete</td>
+                    <td class="amount"><span class="blank blank-amount">[Amount]</span></td>
+                    <td><span class="blank blank-date">[Date]</span></td>
+                    <td>Pending</td>
+                </tr>
+                <tr>
+                    <td>3rd</td>
+                    <td>Construction Commencement</td>
+                    <td class="amount"><span class="blank blank-amount">[Amount]</span></td>
+                    <td><span class="blank blank-date">[Date]</span></td>
+                    <td>Pending</td>
+                </tr>
+                <tr style="font-weight: 700; background: #ebf8ff;">
+                    <td colspan="2">Total Investment</td>
+                    <td class="amount"><span class="blank blank-amount">[Total]</span></td>
+                    <td colspan="2"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ANNEXURE D -->
+    <div class="section annexure">
+        <div class="annexure-header">ANNEXURE D — Project Timeline</div>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Phase</th>
+                    <th>Activity</th>
+                    <th>Timeline</th>
+                    <th>Key Deliverables</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Phase 1</strong></td>
+                    <td>Land & Approvals</td>
+                    <td>Months 1–3</td>
+                    <td>Land registration, mutation, plan approvals, environmental clearance</td>
+                </tr>
+                <tr>
+                    <td><strong>Phase 2</strong></td>
+                    <td>Infrastructure</td>
+                    <td>Months 4–8</td>
+                    <td>Roads, drainage, water supply, electricity, boundary walls, landscaping</td>
+                </tr>
+                <tr>
+                    <td><strong>Phase 3</strong></td>
+                    <td>Construction</td>
+                    <td>Months 9–14</td>
+                    <td>Unit construction (75 units), community facilities, Ganga ghats</td>
+                </tr>
+                <tr>
+                    <td><strong>Phase 4</strong></td>
+                    <td>Completion & Handover</td>
+                    <td>Months 15–18</td>
+                    <td>Finishing, occupancy certificates, unit handover, operations setup</td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="font-size: 10.5px; color: var(--text-muted); margin-top: 12px; text-align: center;">
+            — End of Agreement —
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

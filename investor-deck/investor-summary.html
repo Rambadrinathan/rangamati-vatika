@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RangaMati Vatika — Investor Summary</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2c5282;
+            --accent: #c69c6d;
+            --accent-light: #d4a574;
+            --gold: #d4af37;
+            --success: #2e7d32;
+            --bg-cream: #faf8f5;
+            --text-dark: #1a202c;
+            --text-muted: #4a5568;
+            --ganga-blue: #1565c0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.5;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            max-height: 297mm;
+            margin: 0 auto;
+            padding: 28mm 22mm 20mm 22mm;
+            position: relative;
+            overflow: hidden;
+            page-break-after: always;
+            background: white;
+        }
+
+        .page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 50%, var(--gold) 100%);
+        }
+
+        /* Confidential watermark */
+        .page::after {
+            content: 'CONFIDENTIAL';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-35deg);
+            font-size: 72px;
+            font-weight: 700;
+            color: rgba(26, 54, 93, 0.04);
+            letter-spacing: 15px;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 18px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .header-left h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1px;
+            line-height: 1.1;
+        }
+
+        .header-left .tagline {
+            font-size: 13px;
+            color: var(--accent);
+            font-weight: 500;
+            margin-top: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 10px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .header-right .entity {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 11px;
+        }
+
+        .location-bar {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+            font-size: 12px;
+        }
+
+        .location-bar .highlight {
+            background: rgba(255,255,255,0.15);
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 11px;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid #e2e8f0;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .vision-text {
+            font-size: 12.5px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .vision-text strong {
+            color: var(--primary);
+        }
+
+        .metrics-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .metric {
+            background: var(--bg-cream);
+            border-radius: 8px;
+            padding: 12px 10px;
+            text-align: center;
+            border: 1px solid #e8e0d6;
+        }
+
+        .metric .value {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .metric .label {
+            font-size: 9.5px;
+            color: var(--text-muted);
+            margin-top: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .community-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 14px;
+            text-align: center;
+            border-top: 3px solid var(--accent);
+        }
+
+        .community-card .icon {
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+
+        .community-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14px;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        .community-card .count {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .community-card .desc {
+            font-size: 9.5px;
+            color: var(--text-muted);
+            margin-top: 3px;
+        }
+
+        .track-record {
+            background: linear-gradient(135deg, #f7fafc, #ebf8ff);
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-bottom: 10px;
+            border-left: 3px solid var(--ganga-blue);
+        }
+
+        .track-record h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .track-record ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .track-record li {
+            font-size: 11px;
+            color: var(--text-muted);
+            padding: 2px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .track-record li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 14mm;
+            left: 22mm;
+            right: 22mm;
+            display: flex;
+            justify-content: space-between;
+            font-size: 9px;
+            color: var(--text-muted);
+            border-top: 1px solid #e2e8f0;
+            padding-top: 8px;
+        }
+
+        .footer .confidential {
+            color: var(--primary);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* PAGE 2 STYLES */
+        .financial-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 16px;
+            font-size: 12px;
+        }
+
+        .financial-table th {
+            background: var(--primary);
+            color: white;
+            padding: 8px 12px;
+            text-align: left;
+            font-weight: 500;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+        }
+
+        .financial-table td {
+            padding: 7px 12px;
+            border-bottom: 1px solid #edf2f7;
+        }
+
+        .financial-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .financial-table .total-row {
+            background: #ebf8ff;
+            font-weight: 700;
+        }
+
+        .financial-table .total-row td {
+            color: var(--primary);
+        }
+
+        .financial-table .amount {
+            text-align: right;
+            font-weight: 600;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .investment-boxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .inv-box {
+            border: 2px solid var(--primary);
+            border-radius: 10px;
+            padding: 14px 16px;
+            position: relative;
+        }
+
+        .inv-box.featured {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+        }
+
+        .inv-box .phase-label {
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            opacity: 0.7;
+        }
+
+        .inv-box.featured .phase-label {
+            color: var(--accent-light);
+        }
+
+        .inv-box .inv-amount {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .inv-box .inv-return {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--success);
+            margin: 4px 0;
+        }
+
+        .inv-box.featured .inv-return {
+            color: #81c784;
+        }
+
+        .inv-box ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 8px;
+        }
+
+        .inv-box li {
+            font-size: 10.5px;
+            padding: 2px 0;
+            padding-left: 12px;
+            position: relative;
+        }
+
+        .inv-box li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            color: var(--success);
+        }
+
+        .inv-box.featured li::before {
+            color: #81c784;
+        }
+
+        .timeline-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .timeline-phase {
+            background: var(--bg-cream);
+            border-radius: 8px;
+            padding: 10px 12px;
+            text-align: center;
+            border-top: 3px solid var(--accent);
+            position: relative;
+        }
+
+        .timeline-phase .phase-num {
+            font-size: 9px;
+            color: var(--accent);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .timeline-phase .phase-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--primary);
+            margin: 3px 0;
+        }
+
+        .timeline-phase .phase-time {
+            font-size: 9.5px;
+            color: var(--text-muted);
+        }
+
+        .why-now {
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin-bottom: 16px;
+            border-left: 3px solid var(--gold);
+        }
+
+        .why-now h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14px;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .why-now-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+        }
+
+        .why-now-item {
+            font-size: 11px;
+            color: var(--text-muted);
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .why-now-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 7px;
+            height: 7px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        .contact-bar {
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            padding: 12px 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+        }
+
+        .contact-bar .contact-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .contact-bar .contact-detail {
+            opacity: 0.8;
+        }
+
+        @media print {
+            body { background: white; }
+            .page {
+                margin: 0;
+                padding: 28mm 22mm 20mm 22mm;
+                box-shadow: none;
+            }
+        }
+
+        @media screen {
+            body { background: #e2e8f0; }
+            .page {
+                box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- PAGE 1: THE OPPORTUNITY -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>RangaMati Vatika</h1>
+            <div class="tagline">An Intergenerational Community on the Ganga</div>
+        </div>
+        <div class="header-right">
+            <div class="entity">KarmYog for 21st Century Foundation</div>
+            <div>Investor Summary | March 2026</div>
+            <div>Strictly Private & Confidential</div>
+        </div>
+    </div>
+
+    <div class="location-bar">
+        <span>Uluberia, Howrah District, West Bengal — 97 Kathas (~1.6 Acres)</span>
+        <span class="highlight">Direct Ganga Frontage</span>
+    </div>
+
+    <div class="section-title">The Vision</div>
+    <p class="vision-text">
+        RangaMati Vatika is a <strong>purpose-built intergenerational community</strong> on the banks of the Ganga —
+        where children learn alongside elders, where eco-retreat guests experience Bengal's living heritage,
+        and where 75 families hold <strong>99-year leases</strong> on 1,000 sq.ft. units at just <strong>₹40 Lakhs each</strong>.
+        This is not a real estate project — it is a model for how India's next generation of communities should live.
+    </p>
+
+    <div class="section-title">Key Metrics</div>
+    <div class="metrics-strip">
+        <div class="metric">
+            <div class="value">97</div>
+            <div class="label">Kathas (~1.6 Acres)</div>
+        </div>
+        <div class="metric">
+            <div class="value">75</div>
+            <div class="label">Units (1,000 sq.ft.)</div>
+        </div>
+        <div class="metric">
+            <div class="value">₹30 Cr</div>
+            <div class="label">Gross Revenue</div>
+        </div>
+        <div class="metric">
+            <div class="value">27%</div>
+            <div class="label">Surplus Margin</div>
+        </div>
+    </div>
+
+    <div class="section-title">Community Composition</div>
+    <div class="community-grid">
+        <div class="community-card">
+            <div class="icon">🏫</div>
+            <h4>School Campus</h4>
+            <div class="count">30 Units</div>
+            <div class="desc">Progressive education with nature immersion</div>
+        </div>
+        <div class="community-card">
+            <div class="icon">🏡</div>
+            <h4>Senior Living</h4>
+            <div class="count">30 Units</div>
+            <div class="desc">Dignified aging with community support</div>
+        </div>
+        <div class="community-card">
+            <div class="icon">🌿</div>
+            <h4>Eco-Retreat</h4>
+            <div class="count">15 Units</div>
+            <div class="desc">Wellness tourism on the Ganga</div>
+        </div>
+    </div>
+
+    <div class="track-record">
+        <h4>Promoter Track Record</h4>
+        <ul>
+            <li><strong>Museum of the Future, Dubai</strong> — 1,00,000+ visitors in first year; Ram was founding team</li>
+            <li><strong>IIT Kharagpur Research Park</strong> — KarmYog Foundation operates from India's premier technology campus</li>
+            <li><strong>KarmYog Vatika Gardens</strong> — Operational modular garden business with clients across Kolkata</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <span class="confidential">Confidential — For Intended Recipients Only</span>
+        <span>Page 1 of 2</span>
+    </div>
+</div>
+
+<!-- PAGE 2: THE INVESTMENT -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>RangaMati Vatika</h1>
+            <div class="tagline">Investment Structure & Returns</div>
+        </div>
+        <div class="header-right">
+            <div class="entity">KarmYog for 21st Century Foundation</div>
+            <div>Investor Summary | March 2026</div>
+        </div>
+    </div>
+
+    <div class="section-title">Financial Summary</div>
+    <table class="financial-table">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th class="amount">Amount (₹ Cr)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Gross Revenue (75 units × ₹40L)</td><td class="amount">30.00</td></tr>
+            <tr><td>Land Acquisition</td><td class="amount">4.00</td></tr>
+            <tr><td>Construction (75 units)</td><td class="amount">12.00</td></tr>
+            <tr><td>Infrastructure & Amenities</td><td class="amount">3.50</td></tr>
+            <tr><td>Approvals, Legal & Marketing</td><td class="amount">2.50</td></tr>
+            <tr class="total-row"><td>Total Development Cost</td><td class="amount">22.00</td></tr>
+            <tr class="total-row"><td>Net Surplus</td><td class="amount">8.00</td></tr>
+        </tbody>
+    </table>
+
+    <div class="section-title">Investment Opportunity — ₹2.5 Cr Raise</div>
+    <div class="investment-boxes">
+        <div class="inv-box featured">
+            <div class="phase-label">Phase 1 — Immediate</div>
+            <div class="inv-amount">₹1.00 Cr</div>
+            <div class="inv-return">2.0x Return</div>
+            <ul>
+                <li>25% undivided land share</li>
+                <li>12 units allocated</li>
+                <li>25% project equity</li>
+                <li>Board-level oversight rights</li>
+            </ul>
+        </div>
+        <div class="inv-box">
+            <div class="phase-label">Phase 2 — Construction</div>
+            <div class="inv-amount">₹1.50 Cr</div>
+            <div class="inv-return" style="color: var(--success);">1.33x Return</div>
+            <ul>
+                <li>Construction financing</li>
+                <li>Priority unit selection</li>
+                <li>Pro-rata surplus share</li>
+                <li>Monthly progress reports</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section-title">Project Timeline — 18 Months</div>
+    <div class="timeline-bar">
+        <div class="timeline-phase">
+            <div class="phase-num">Phase 1</div>
+            <div class="phase-title">Land & Approvals</div>
+            <div class="phase-time">Months 1–3</div>
+        </div>
+        <div class="timeline-phase">
+            <div class="phase-num">Phase 2</div>
+            <div class="phase-title">Infrastructure</div>
+            <div class="phase-time">Months 4–8</div>
+        </div>
+        <div class="timeline-phase">
+            <div class="phase-num">Phase 3</div>
+            <div class="phase-title">Construction</div>
+            <div class="phase-time">Months 9–14</div>
+        </div>
+        <div class="timeline-phase">
+            <div class="phase-num">Phase 4</div>
+            <div class="phase-title">Completion</div>
+            <div class="phase-time">Months 15–18</div>
+        </div>
+    </div>
+
+    <div class="why-now">
+        <h4>Why Now?</h4>
+        <div class="why-now-grid">
+            <div class="why-now-item">Land acquired — 97 Kathas secured</div>
+            <div class="why-now-item">Bhoomi Puja completed</div>
+            <div class="why-now-item">Phase 1 costs locked and verified</div>
+            <div class="why-now-item">First-mover on Ganga community living</div>
+        </div>
+    </div>
+
+    <div class="contact-bar">
+        <div>
+            <div class="contact-name">Ram Badrinathan</div>
+            <div class="contact-detail">Founder, KarmYog for 21st Century Foundation</div>
+        </div>
+        <div style="text-align: right;">
+            <div class="contact-detail">ram@ky21c.org</div>
+            <div class="contact-detail">IIT Kharagpur Research Park</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <span class="confidential">Confidential — For Intended Recipients Only</span>
+        <span>Page 2 of 2</span>
+    </div>
+</div>
+
+</body>
+</html>
